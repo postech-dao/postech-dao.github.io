@@ -34,14 +34,12 @@
 
 @media (max-width: 575px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 863px;
+    min-height: 661px;
   }
 
   .u-section-1 .u-image-1 {
-    width: 440px;
-    height: 622px;
-    margin-left: -50px;
-    margin-right: -50px;
+    height: 480px;
+    width: 340px;
   }
 }
 
