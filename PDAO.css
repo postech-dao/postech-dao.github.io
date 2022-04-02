@@ -7,7 +7,13 @@
   height: 1208px;
   box-shadow: 0 0 40px 5px rgba(128,128,128,1);
   transition-duration: 0.5s;
-  margin: 111px auto 60px;
+  margin: 167px auto 56px 109px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-image-1 {
+    margin-left: 86px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -18,6 +24,7 @@
   .u-section-1 .u-image-1 {
     width: 720px;
     height: 1019px;
+    margin-left: 0;
   }
 }
 
