@@ -1,5 +1,6 @@
 #sec-9cb6 {
-  background: black;
+  background-image: url(./banner.png);
+  background-size: cover;
 }
 
 .u-text-placeholder {
