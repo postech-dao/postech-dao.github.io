@@ -9,7 +9,7 @@
   <meta name="page_type" content="website">
   <title>PDAO</title>
   <link rel="stylesheet" href="nicepage.css" media="screen">
-  <link rel="stylesheet" href="PhotoSwipe/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="PDAO.css" media="screen">
   <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
   <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
@@ -55,35 +55,43 @@
       <h1 class="u-align-center u-text u-text-default u-title u-text-1">Decentralize.</h1>
     </div>
   </header>
+
   <section class="u-clearfix u-section-1" id="sec-gallery">
     <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="pswp-gallery pswp-gallery--single-column" id="my-gallery">
-            <a href="banner.png"
-              data-pswp-width="500" 
-              data-pswp-height="500" 
-              target="_blank">
-              <img src="banner.png" alt="" />
-            </a>
-            <a
-              data-pswp-width="500" 
-              data-pswp-height="500" 
-              target="_blank">
-              <img src="banner.png" alt="" />
-            </a>
-            <a
-              data-pswp-width="500" 
-              data-pswp-height="500" 
-              target="_blank">
-              <img src="banner.png" alt="" />
-            </a>
-            
-            
-        </div>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="images/6.png" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
     </div>
   </section>
-  
-  </section>
-
 
   <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-palette-2-base"
     id="sec-3f57">
@@ -133,14 +141,25 @@
       </p>
     </div>
   </footer>
-  <script type="module">
-    import PhotoSwipeLightbox from './PhotoSwipe/dist/photoswipe-lightbox.esm.js';
-    const lightbox = new PhotoSwipeLightbox({
-      gallery: '#my-gallery',
-      children: 'a',
-      pswpModule: () => import('./PhotoSwipe/dist/photoswipe.esm.js')
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    let swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
     });
-    lightbox.init();
   </script>
 </body>
 
