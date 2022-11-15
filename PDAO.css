@@ -1,3 +1,58 @@
+/* https://css-tricks.com/adaptive-photo-layout-with-flexbox/ */
+
+.pophin-gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pophin-gallery-item {
+  height: 40vh;
+  flex-grow: 1;
+  margin: 30px;
+}
+
+.pophin-gallery-item:last-child {
+  flex-grow: 10;
+}
+
+.pophin-gallery-item img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: contain;
+  vertical-align: bottom;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .pophin-gallery-item {
+    height: 30vh;
+  }
+}
+
+
+@media (max-height: 480px) {
+  .pophin-gallery-item {
+    height: 80vh;
+  }
+}
+
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .pophin-gallery-container {
+    flex-direction: row;
+  }
+
+  .pophin-gallery-item {
+    height: auto;
+    width: 100%;
+  }
+  .pophin-gallery-item img {
+    width: 100%;
+    max-height: 75vh;
+    min-width: 0;
+  }
+}
+
+
 #pophin-1 {
   margin-top: 0px;
   margin-bottom: 0px;
