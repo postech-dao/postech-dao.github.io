@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Pophin" />
+    <meta name="description" content="Postech Decentralized Autonomous Organization" />
+    <meta name="page_type" content="website" />
+    <title>PDAO</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="PDAO.css" media="screen" />
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <script charset="utf-8" src="https://cdn.ethers.io/scripts/ethers-v4.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.2.11/dist/web3.min.js"></script>
+    <link rel="icon" href="images/favicon1.png" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i" />
+    <link
+      id="u-page-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" />
+  </head>
+
+  <body>
+    <header>
+      <h1 style="text-align: center">Export your public key</h1>
+      <div style="margin: 100px 250px 100px">
+        <button id="loginButton" onclick="" style="padding: 8px; border-radius: 5px; background-color: white">
+          Sign in with Metamask
+        </button>
+
+        <div style="margin-top: 10px">Your public key is (click to copy): <span id="publicKey"></span></div>
+      </div>
+    </header>
+    <script>
+      // You need to run local node for testing (python http.server would be useful)
+      window.userWalletAddress = null;
+      const loginButton = document.getElementById("loginButton");
+      const publicKey = document.getElementById("publicKey");
+
+      function toggleButton() {
+        if (!window.ethereum) {
+          loginButton.innerText = "MetaMask is not installed";
+          return false;
+        }
+
+        loginButton.addEventListener("click", loginWithMetaMask);
+      }
+
+      async function loginWithMetaMask() {
+        const accounts = await window.ethereum.request({ method: "eth_requestAccounts" }).catch((e) => {
+          console.error(e.message);
+          return;
+        });
+        if (!accounts) {
+          return;
+        }
+
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = await provider.getSigner();
+
+        const ethAddress = accounts[0];
+        const hash = await ethers.utils.keccak256(ethAddress);
+        const sig = await signer.signMessage(ethers.utils.arrayify(hash));
+
+        const pk = ethers.utils.recoverPublicKey(
+          ethers.utils.arrayify(ethers.utils.hashMessage(ethers.utils.arrayify(hash))),
+          sig
+        );
+
+        const pkSlice = pk.slice(0, 20) + "..." + pk.slice(pk.length - 20, pk.length);
+
+        // console.log(ethers.utils.computeAddress(pk));
+
+        window.userWalletAddress = accounts[0];
+        publicKey.innerText = pkSlice;
+        loginButton.innerText = "Sign out of Metamask";
+
+        loginButton.removeEventListener("click", loginWithMetaMask);
+        setTimeout(() => {
+          loginButton.addEventListener("click", signOutOfMetaMask);
+        }, 200);
+
+        // when click public key, copy to clipboard
+        publicKey.addEventListener("click", () => {
+          navigator.clipboard.writeText(pk);
+        });
+      }
+
+      function signOutOfMetaMask() {
+        window.userWalletAddress = null;
+        publicKey.innerText = "";
+        loginButton.innerText = "Sign in with Metamask";
+
+        loginButton.removeEventListener("click", signOutOfMetaMask);
+        setTimeout(() => {
+          loginButton.addEventListener("click", loginWithMetaMask);
+        }, 200);
+      }
+
+      window.addEventListener("DOMContentLoaded", () => {
+        toggleButton();
+      });
+    </script>
+  </body>
+</html>
