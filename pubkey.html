@@ -31,8 +31,18 @@
         <button id="loginButton" onclick="" style="padding: 8px; border-radius: 5px; background-color: white">
           Sign in with Metamask
         </button>
-
-        <div style="margin-top: 10px">Your public key is (click to copy): <span id="publicKey"></span></div>
+        <div style="margin-top: 10px; font-weight: bold">Your public key is (click to copy):</div>
+        <span
+          style="
+            margin-top: 10px;
+            display: block;
+            max-width: 1800px;
+            word-wrap: break-word;
+            font-size: 20px;
+            text-decoration: underline;
+            cursor: pointer;
+          "
+          id="publicKey"></span>
       </div>
     </header>
     <script>
@@ -71,12 +81,10 @@
           sig
         );
 
-        const pkSlice = pk.slice(0, 20) + "..." + pk.slice(pk.length - 20, pk.length);
-
         // console.log(ethers.utils.computeAddress(pk));
 
         window.userWalletAddress = accounts[0];
-        publicKey.innerText = pkSlice;
+        publicKey.innerText = pk;
         loginButton.innerText = "Sign out of Metamask";
 
         loginButton.removeEventListener("click", loginWithMetaMask);
@@ -84,9 +92,13 @@
           loginButton.addEventListener("click", signOutOfMetaMask);
         }, 200);
 
-        // when click public key, copy to clipboard
+        // when click public key, copy to clipboard and change color
         publicKey.addEventListener("click", () => {
           navigator.clipboard.writeText(pk);
+          publicKey.style.color = "red";
+          setTimeout(() => {
+            publicKey.style.color = "black";
+          }, 200);
         });
       }
 
