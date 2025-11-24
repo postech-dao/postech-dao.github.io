@@ -1,0 +1,82 @@
+/* Typography System */
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-md);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-sm);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-sm);
+}
+
+h6 {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-sm);
+}
+
+/* Paragraph */
+p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  color: var(--text-primary);
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--brand-main);
+}
+
+/* Small text */
+small {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+/* Strong text */
+strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Code */
+code {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: var(--font-size-sm);
+  background: var(--bg-surface);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
