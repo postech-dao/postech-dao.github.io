@@ -4,6 +4,8 @@
  */
 
 import { initSidebar } from './modules/sidebar.js';
+import { initComponents } from './modules/components.js';
+import { initMediumFeed } from './modules/medium-feed.js';
 
 /**
  * Set active navigation link based on current page
@@ -28,14 +30,22 @@ function setActiveNavLink() {
 /**
  * Initialize all modules when DOM is ready
  */
-function init() {
+async function init() {
   console.log('PDAO Website initialized');
+
+  // Load dynamic components (sidebar, footer)
+  await initComponents();
 
   // Initialize sidebar functionality
   initSidebar();
 
   // Set active navigation link
   setActiveNavLink();
+
+  // Initialize Medium feed (only on pages with medium-posts container)
+  if (document.getElementById('medium-posts')) {
+    initMediumFeed();
+  }
 
   // Add smooth scroll behavior for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

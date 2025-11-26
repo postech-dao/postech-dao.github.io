@@ -50,96 +50,8 @@
 </head>
 
 <body>
-  <!-- Sidebar Navigation -->
-  <aside class="sidebar">
-    <!-- Logo -->
-    <div class="sidebar__logo">
-      <img src="images/favicon.png" alt="PDAO Logo" class="sidebar__logo-img">
-      <div>
-        <div class="sidebar__brand">PDAO</div>
-        <div class="sidebar__brand-sub">POSTECH DAO</div>
-      </div>
-    </div>
-
-    <!-- Search -->
-    <div class="sidebar__search">
-      <div class="search">
-        <input type="text" class="search__input" placeholder="Search PDAO...">
-        <svg class="search__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="sidebar__nav">
-      <!-- About Group -->
-      <div class="nav-group">
-        <a href="about.html" class="nav-group__title nav-group__title--link">About</a>
-        <ul class="nav-group__list">
-          <li><a href="about.html#history" class="nav-link">
-            <span class="nav-text">History</span>
-          </a></li>
-          <li><a href="https://github.com/postech-dao/pdao/blob/main/README.md" target="_blank" class="nav-link">
-            <span class="nav-text">IR</span>
-          </a></li>
-          <li><a href="https://twitter.com/postech_dao" target="_blank" class="nav-link">
-            <span class="nav-text">X</span>
-          </a></li>
-          <li><a href="https://discord.gg/tf9v5hHpzW" target="_blank" class="nav-link">
-            <span class="nav-text">Discord</span>
-          </a></li>
-          <li><a href="https://github.com/postech-dao" target="_blank" class="nav-link">
-            <span class="nav-text">GitHub</span>
-          </a></li>
-          <li><a href="https://medium.com/postech-dao" target="_blank" class="nav-link">
-            <span class="nav-text">Medium</span>
-          </a></li>
-          <li><a href="https://www.youtube.com/channel/UCBU7VcTAizK_btu96oQ0qmg" target="_blank" class="nav-link">
-            <span class="nav-text">Youtube</span>
-          </a></li>
-          <li><a href="https://www.instagram.com/postech_dao" target="_blank" class="nav-link">
-            <span class="nav-text">Instagram</span>
-          </a></li>
-        </ul>
-      </div>
-
-      <!-- Simperby Group -->
-      <div class="nav-group">
-        <a href="simperby.html" class="nav-group__title nav-group__title--link">Simperby</a>
-        <ul class="nav-group__list">
-          <li><a href="https://github.com/postech-dao/simperby" target="_blank" class="nav-link">
-            <span class="nav-text">Docs</span>
-          </a></li>
-        </ul>
-      </div>
-
-      <!-- Assets Group -->
-      <div class="nav-group">
-        <a href="assets.html" class="nav-group__title nav-group__title--link">Assets</a>
-        <ul class="nav-group__list">
-          <li><a href="assets.html#logo" class="nav-link">
-            <span class="nav-text">Logo</span>
-          </a></li>
-          <li><a href="assets.html#poppin" class="nav-link">
-            <span class="nav-text">Poppin</span>
-          </a></li>
-        </ul>
-      </div>
-
-      <!-- Profile Group -->
-      <div class="nav-group">
-        <a href="profile.html" class="nav-group__title nav-group__title--link">Profile</a>
-      </div>
-    </nav>
-
-    <!-- Mobile Toggle Button -->
-    <button id="sidebar-toggle" aria-label="Toggle Navigation" aria-expanded="false">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-  </aside>
+  <!-- Sidebar Placeholder - Loaded dynamically -->
+  <div id="sidebar-placeholder"></div>
 
   <!-- Main Content -->
   <main class="main-content">
@@ -158,69 +70,22 @@
       </div>
     </section>
 
-    <!-- Articles Section -->
-    <section class="section">
+    <!-- Medium Posts Section -->
+    <section class="section" id="medium-section">
       <div class="container">
         <div class="section__header">
           <h2 class="section__title">PDAO Insights</h2>
-          <a href="#" class="section__link">View all →</a>
+          <a href="https://medium.com/postech-dao" target="_blank" class="section__link">View on Medium →</a>
         </div>
 
-        <!-- Featured Grid: 1 Large + 3 Small -->
-        <div class="card-grid card-grid--featured">
-          <!-- Large Featured Card -->
-          <article class="card card--large">
-            <div class="card__image-wrapper">
-              <img src="images/poster1.png" alt="PDAO Main Project">
-            </div>
-            <div class="card__content">
-              <span class="card__tag">Featured</span>
-              <h3 class="card__title">Decentralize the Future</h3>
-              <p class="card__description">
-                포스텍 DAO는 블록체인 기술을 통해 탈중앙화된 미래를 만들어가고 있습니다.
-                Simperby 프로젝트를 중심으로 다양한 연구와 개발이 진행되고 있습니다.
-              </p>
-              <div class="card__meta">
-                <span>Research</span>
-                <span>•</span>
-                <span>2024</span>
-              </div>
-            </div>
-          </article>
+        <!-- Medium posts loaded dynamically -->
+        <div id="medium-posts" class="card-grid card-grid--3col">
+          <!-- JS에서 동적으로 채움 -->
+        </div>
 
-          <!-- Small Cards -->
-          <article class="card">
-            <div class="card__image-wrapper">
-              <img src="images/6.png" alt="What is PDAO">
-            </div>
-            <div class="card__content">
-              <span class="card__tag">About</span>
-              <h3 class="card__title">What is PDAO?</h3>
-              <p class="card__description">Our Identity, Our Goal, Our Vision</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__image-wrapper">
-              <img src="images/6.png" alt="Multichain DAO">
-            </div>
-            <div class="card__content">
-              <span class="card__tag">Project</span>
-              <h3 class="card__title">Multichain DAO</h3>
-              <p class="card__description">Building the next generation of DAO</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card__image-wrapper">
-              <img src="images/6.png" alt="Constitution">
-            </div>
-            <div class="card__content">
-              <span class="card__tag">Governance</span>
-              <h3 class="card__title">Constitution</h3>
-              <p class="card__description">How we operate as a community</p>
-            </div>
-          </article>
+        <!-- View all / Show less 버튼 -->
+        <div class="medium-actions">
+          <button id="view-all-btn" type="button" class="btn btn--secondary">View all</button>
         </div>
       </div>
     </section>
@@ -293,76 +158,8 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer__container">
-        <!-- Footer Brand -->
-        <div class="footer__brand">
-          <img src="images/favicon.png" alt="PDAO Logo" class="footer__logo">
-          <div class="footer__brand-text">PDAO</div>
-        </div>
-
-        <!-- Footer Grid -->
-        <div class="footer__grid">
-          <!-- Research Column -->
-          <div class="footer__column">
-            <div class="footer__column-title">Research</div>
-            <a href="#" class="footer__link">Articles</a>
-            <a href="#" class="footer__link">Reports</a>
-            <a href="https://medium.com/postech-dao" target="_blank" class="footer__link">Blog</a>
-          </div>
-
-          <!-- Projects Column -->
-          <div class="footer__column">
-            <div class="footer__column-title">Projects</div>
-            <a href="simperby.html" class="footer__link">Simperby</a>
-            <a href="https://github.com/postech-dao/simperby" target="_blank" class="footer__link">Documentation</a>
-          </div>
-
-          <!-- Company Column -->
-          <div class="footer__column">
-            <div class="footer__column-title">Company</div>
-            <a href="about.html" class="footer__link">About</a>
-            <a href="https://github.com/postech-dao/pdao/blob/main/README.md" target="_blank" class="footer__link">IR</a>
-            <a href="profile.html" class="footer__link">Team</a>
-          </div>
-
-          <!-- Social Column -->
-          <div class="footer__column">
-            <div class="footer__column-title">Social</div>
-            <a href="https://twitter.com/postech_dao" target="_blank" class="footer__link">Twitter</a>
-            <a href="https://github.com/postech-dao" target="_blank" class="footer__link">GitHub</a>
-            <a href="https://discord.gg/tf9v5hHpzW" target="_blank" class="footer__link">Discord</a>
-            <a href="https://medium.com/postech-dao" target="_blank" class="footer__link">Medium</a>
-            <a href="https://www.youtube.com/channel/UCBU7VcTAizK_btu96oQ0qmg" target="_blank" class="footer__link">YouTube</a>
-          </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer__bottom">
-          <div class="footer__copyright">
-            © 2024 Postech DAO. All rights reserved.<br>
-            Contact: junha1@postech.ac.kr
-          </div>
-
-          <!-- Social Icons -->
-          <div class="footer__social">
-            <a href="https://twitter.com/postech_dao" target="_blank" class="social-icon" aria-label="Twitter">
-              <img src="images/733635.png" alt="Twitter">
-            </a>
-            <a href="https://discord.gg/tf9v5hHpzW" target="_blank" class="social-icon" aria-label="Discord">
-              <img src="images/5968898.png" alt="Discord">
-            </a>
-            <a href="https://github.com/postech-dao" target="_blank" class="social-icon" aria-label="GitHub">
-              <img src="images/7336091.png" alt="GitHub">
-            </a>
-            <a href="https://medium.com/postech-dao" target="_blank" class="social-icon" aria-label="Medium">
-              <img src="images/21115432.png" alt="Medium">
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <!-- Footer Placeholder - Loaded dynamically -->
+    <div id="footer-placeholder"></div>
   </main>
 
   <!-- JavaScript Module -->

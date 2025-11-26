@@ -201,3 +201,24 @@
     font-size: var(--font-size-2xl);
   }
 }
+
+/* Medium Feed Section */
+.medium-actions {
+  margin-top: var(--space-xl);
+  text-align: center;
+}
+
+#medium-posts .loading,
+#medium-posts .error,
+#medium-posts .empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-muted);
+  padding: var(--space-2xl);
+}
+
+/* Make clickable cards work properly */
+a.card {
+  text-decoration: none;
+  color: inherit;
+}
