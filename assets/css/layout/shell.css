@@ -78,12 +78,29 @@ body {
 }
 
 .nav-group__title {
+  display: block;
   font-size: var(--font-size-xs);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
   margin-bottom: var(--space-sm);
+}
+
+/* Clickable nav group title */
+.nav-group__title--link {
+  text-decoration: none;
+  padding: var(--space-xs) 0;
+  transition: color var(--transition-base);
+  cursor: pointer;
+}
+
+.nav-group__title--link:hover {
+  color: var(--brand-main);
+}
+
+.nav-group__title--link.active {
+  color: var(--brand-main);
 }
 
 .nav-group__list {

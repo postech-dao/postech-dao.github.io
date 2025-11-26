@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PDAO Team - Meet the Members">
+  <meta name="keywords" content="PDAO, team, members, POSTECH, blockchain">
+
+  <title>Profile - PDAO</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon1.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- SEO & Social Meta Tags -->
+  <meta property="og:title" content="Profile - PDAO">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dao.postech.ac.kr/profile.html">
+  <meta property="og:image" content="https://dao.postech.ac.kr/banner.png">
+  <meta property="og:description" content="PDAO Team - Meet the Members">
+  <meta name="theme-color" content="#C80864">
+</head>
+
+<body>
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <!-- Logo -->
+    <div class="sidebar__logo">
+      <a href="index.html">
+        <img src="images/favicon.png" alt="PDAO Logo" class="sidebar__logo-img">
+      </a>
+      <div>
+        <a href="index.html" class="sidebar__brand">PDAO</a>
+        <div class="sidebar__brand-sub">POSTECH DAO</div>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="sidebar__search">
+      <div class="search">
+        <input type="text" class="search__input" placeholder="Search PDAO...">
+        <svg class="search__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sidebar__nav">
+      <!-- About Group -->
+      <div class="nav-group">
+        <a href="about.html" class="nav-group__title nav-group__title--link">About</a>
+        <ul class="nav-group__list">
+          <li><a href="about.html#history" class="nav-link">
+            <span class="nav-text">History</span>
+          </a></li>
+          <li><a href="https://github.com/postech-dao/pdao/blob/main/README.md" target="_blank" class="nav-link">
+            <span class="nav-text">IR</span>
+          </a></li>
+          <li><a href="https://twitter.com/postech_dao" target="_blank" class="nav-link">
+            <span class="nav-text">X</span>
+          </a></li>
+          <li><a href="https://discord.gg/tf9v5hHpzW" target="_blank" class="nav-link">
+            <span class="nav-text">Discord</span>
+          </a></li>
+          <li><a href="https://github.com/postech-dao" target="_blank" class="nav-link">
+            <span class="nav-text">GitHub</span>
+          </a></li>
+          <li><a href="https://medium.com/postech-dao" target="_blank" class="nav-link">
+            <span class="nav-text">Medium</span>
+          </a></li>
+          <li><a href="https://www.youtube.com/channel/UCBU7VcTAizK_btu96oQ0qmg" target="_blank" class="nav-link">
+            <span class="nav-text">Youtube</span>
+          </a></li>
+          <li><a href="https://www.instagram.com/postech_dao" target="_blank" class="nav-link">
+            <span class="nav-text">Instagram</span>
+          </a></li>
+        </ul>
+      </div>
+
+      <!-- Simperby Group -->
+      <div class="nav-group">
+        <a href="simperby.html" class="nav-group__title nav-group__title--link">Simperby</a>
+        <ul class="nav-group__list">
+          <li><a href="https://github.com/postech-dao/simperby" target="_blank" class="nav-link">
+            <span class="nav-text">Docs</span>
+          </a></li>
+        </ul>
+      </div>
+
+      <!-- Assets Group -->
+      <div class="nav-group">
+        <a href="assets.html" class="nav-group__title nav-group__title--link">Assets</a>
+        <ul class="nav-group__list">
+          <li><a href="assets.html#logo" class="nav-link">
+            <span class="nav-text">Logo</span>
+          </a></li>
+          <li><a href="assets.html#poppin" class="nav-link">
+            <span class="nav-text">Poppin</span>
+          </a></li>
+        </ul>
+      </div>
+
+      <!-- Profile Group -->
+      <div class="nav-group">
+        <a href="profile.html" class="nav-group__title nav-group__title--link active">Profile</a>
+      </div>
+    </nav>
+
+    <!-- Mobile Toggle Button -->
+    <button id="sidebar-toggle" aria-label="Toggle Navigation" aria-expanded="false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero hero--compact">
+      <div class="hero__decoration hero__decoration--circle"></div>
+      <div class="hero__decoration hero__decoration--blur"></div>
+
+      <div class="hero__content">
+        <span class="hero__label">Team</span>
+        <h1 class="hero__title">PDAO Members</h1>
+        <p class="hero__subtitle">
+          블록체인의 미래를 함께 만들어가는 PDAO 멤버들을 소개합니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="card-grid card-grid--4col">
+          <article class="card">
+            <div class="card__content text-center">
+              <h3 class="card__title" style="font-size: var(--font-size-4xl); color: var(--brand-main);">10+</h3>
+              <p class="card__description">Total Members</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__content text-center">
+              <h3 class="card__title" style="font-size: var(--font-size-4xl); color: var(--brand-main);">3</h3>
+              <p class="card__description">Core Team</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__content text-center">
+              <h3 class="card__title" style="font-size: var(--font-size-4xl); color: var(--brand-main);">5</h3>
+              <p class="card__description">Researchers</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__content text-center">
+              <h3 class="card__title" style="font-size: var(--font-size-4xl); color: var(--brand-main);">4</h3>
+              <p class="card__description">Contributors</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Team Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Core Team</h2>
+        </div>
+
+        <div class="card-grid card-grid--2col">
+          <!-- Member Card 1 -->
+          <article class="card card--horizontal">
+            <div class="card__image-wrapper" style="aspect-ratio: 1/1;">
+              <img src="images/6.png" alt="Team Member">
+            </div>
+            <div class="card__content">
+              <span class="card__tag">Founder</span>
+              <h3 class="card__title">Junha Yang</h3>
+              <p class="card__description">
+                PDAO 설립자이자 Simperby 프로젝트 리드.
+                블록체인 아키텍처와 분산 시스템 전문가.
+              </p>
+              <div class="card__meta">
+                <span>POSTECH CSE</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Member Card 2 -->
+          <article class="card card--horizontal">
+            <div class="card__image-wrapper" style="aspect-ratio: 1/1;">
+              <img src="images/6.png" alt="Team Member">
+            </div>
+            <div class="card__content">
+              <span class="card__tag">Core Developer</span>
+              <h3 class="card__title">Member 2</h3>
+              <p class="card__description">
+                Simperby 핵심 개발자.
+                Rust 및 블록체인 프로토콜 개발 담당.
+              </p>
+              <div class="card__meta">
+                <span>POSTECH</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Member Card 3 -->
+          <article class="card card--horizontal">
+            <div class="card__image-wrapper" style="aspect-ratio: 1/1;">
+              <img src="images/6.png" alt="Team Member">
+            </div>
+            <div class="card__content">
+              <span class="card__tag">Researcher</span>
+              <h3 class="card__title">Member 3</h3>
+              <p class="card__description">
+                블록체인 리서치 및 컨센서스 알고리즘 연구.
+              </p>
+              <div class="card__meta">
+                <span>POSTECH</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Member Card 4 -->
+          <article class="card card--horizontal">
+            <div class="card__image-wrapper" style="aspect-ratio: 1/1;">
+              <img src="images/6.png" alt="Team Member">
+            </div>
+            <div class="card__content">
+              <span class="card__tag">Operations</span>
+              <h3 class="card__title">Member 4</h3>
+              <p class="card__description">
+                커뮤니티 운영 및 마케팅 담당.
+              </p>
+              <div class="card__meta">
+                <span>POSTECH</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contributors Section -->
+    <section class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Contributors</h2>
+        </div>
+
+        <div class="card-grid card-grid--4col">
+          <article class="card card--small">
+            <div class="card__content text-center">
+              <h3 class="card__title">Contributor 1</h3>
+              <p class="card__description">Developer</p>
+            </div>
+          </article>
+
+          <article class="card card--small">
+            <div class="card__content text-center">
+              <h3 class="card__title">Contributor 2</h3>
+              <p class="card__description">Designer</p>
+            </div>
+          </article>
+
+          <article class="card card--small">
+            <div class="card__content text-center">
+              <h3 class="card__title">Contributor 3</h3>
+              <p class="card__description">Researcher</p>
+            </div>
+          </article>
+
+          <article class="card card--small">
+            <div class="card__content text-center">
+              <h3 class="card__title">Contributor 4</h3>
+              <p class="card__description">Community</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join CTA Section -->
+    <section class="section">
+      <div class="container">
+        <div class="hero hero--compact">
+          <div class="hero__content">
+            <h2 class="hero__title">Join Our Team</h2>
+            <p class="hero__subtitle">
+              PDAO와 함께 블록체인의 미래를 만들어가고 싶으신가요?<br>
+              지금 바로 지원하세요!
+            </p>
+            <div class="hero__actions">
+              <a href="https://github.com/postech-dao/simperby/wiki/2022-recruit" target="_blank" class="btn btn--primary btn--large">
+                Apply Now
+              </a>
+              <a href="https://discord.gg/tf9v5hHpzW" target="_blank" class="btn btn--ghost btn--large">
+                Join Discord
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__brand">
+          <img src="images/favicon.png" alt="PDAO Logo" class="footer__logo">
+          <div class="footer__brand-text">PDAO</div>
+        </div>
+
+        <div class="footer__grid">
+          <div class="footer__column">
+            <div class="footer__column-title">About</div>
+            <a href="about.html#history" class="footer__link">History</a>
+            <a href="https://github.com/postech-dao/pdao/blob/main/README.md" target="_blank" class="footer__link">IR</a>
+          </div>
+
+          <div class="footer__column">
+            <div class="footer__column-title">Projects</div>
+            <a href="simperby.html" class="footer__link">Simperby</a>
+            <a href="https://github.com/postech-dao/simperby" target="_blank" class="footer__link">Documentation</a>
+          </div>
+
+          <div class="footer__column">
+            <div class="footer__column-title">Resources</div>
+            <a href="assets.html" class="footer__link">Assets</a>
+            <a href="profile.html" class="footer__link">Team</a>
+          </div>
+
+          <div class="footer__column">
+            <div class="footer__column-title">Social</div>
+            <a href="https://twitter.com/postech_dao" target="_blank" class="footer__link">X</a>
+            <a href="https://github.com/postech-dao" target="_blank" class="footer__link">GitHub</a>
+            <a href="https://discord.gg/tf9v5hHpzW" target="_blank" class="footer__link">Discord</a>
+            <a href="https://medium.com/postech-dao" target="_blank" class="footer__link">Medium</a>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <div class="footer__copyright">
+            © 2024 Postech DAO. All rights reserved.<br>
+            Contact: junha1@postech.ac.kr
+          </div>
+
+          <div class="footer__social">
+            <a href="https://twitter.com/postech_dao" target="_blank" class="social-icon" aria-label="Twitter">
+              <img src="images/733635.png" alt="Twitter">
+            </a>
+            <a href="https://discord.gg/tf9v5hHpzW" target="_blank" class="social-icon" aria-label="Discord">
+              <img src="images/5968898.png" alt="Discord">
+            </a>
+            <a href="https://github.com/postech-dao" target="_blank" class="social-icon" aria-label="GitHub">
+              <img src="images/7336091.png" alt="GitHub">
+            </a>
+            <a href="https://medium.com/postech-dao" target="_blank" class="social-icon" aria-label="Medium">
+              <img src="images/21115432.png" alt="Medium">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- JavaScript Module -->
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+
+</html>
