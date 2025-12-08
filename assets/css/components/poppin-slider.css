@@ -1,0 +1,177 @@
+/* Poppin Slider Component */
+.poppin-section {
+    padding: 0 0 var(--space-3xl) 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.poppin-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    padding: 0 var(--space-lg);
+}
+
+.poppin-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 900;
+    margin-bottom: var(--space-sm);
+    background: linear-gradient(135deg, #fff 0%, var(--brand-main) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.poppin-subtitle {
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Slider Container */
+.poppin-slider {
+    display: flex;
+    gap: var(--space-xl);
+    padding: var(--space-3xl) var(--space-lg);
+    overflow-x: auto;
+    /* scroll-snap-type: x mandatory; - Removed for smooth auto-scroll */
+    scrollbar-width: none;
+    /* Firefox */
+    /* IE/Edge */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    scroll-behavior: smooth;
+    /* Add padding to allow cards to pop out without being cut off */
+    padding-top: 80px;
+}
+
+.poppin-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Card Design */
+.poppin-card {
+    flex: 0 0 300px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    position: relative;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-lg);
+    cursor: pointer;
+    overflow: visible;
+    /* Allow image to pop out */
+}
+
+/* Glassmorphism gradient overlay */
+.poppin-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 1;
+}
+
+.poppin-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--brand-main);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Character Image */
+.poppin-card__image {
+    position: absolute;
+    top: -60px;
+    /* Pop out effect */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    height: 280px;
+    object-fit: contain;
+    z-index: 2;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.poppin-card:hover .poppin-card__image {
+    transform: translateX(-50%) scale(1.1) translateY(-10px);
+}
+
+/* Card Content */
+.poppin-card__content {
+    position: relative;
+    z-index: 3;
+    margin-bottom: var(--space-sm);
+}
+
+.poppin-card__title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 var(--space-xs) 0;
+}
+
+.poppin-card__desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Badge/Action */
+.poppin-card__action {
+    position: absolute;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    z-index: 3;
+    background: var(--brand-main);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.poppin-card:hover .poppin-card__action {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Background Decoration */
+.poppin-bg-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: var(--brand-main);
+    filter: blur(150px);
+    opacity: 0.15;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Animation for auto-scroll hint */
+@keyframes scrollHint {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+}

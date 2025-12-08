@@ -2,7 +2,7 @@
 
 .hero {
   position: relative;
-  min-height: 400px;
+  min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,7 +97,7 @@
 
 /* Hero with Image Variant */
 .hero--with-image {
-  min-height: 500px;
+  min-height: 400px;
   text-align: left;
   justify-content: flex-start;
   padding-left: 10%;
@@ -110,7 +110,7 @@
 
 /* Hero Compact Variant */
 .hero--compact {
-  min-height: 280px;
+  min-height: 180px;
   padding: var(--space-xl) var(--space-lg);
 }
 
@@ -149,7 +149,7 @@
 /* Tablet */
 @media (max-width: 1024px) {
   .hero {
-    min-height: 350px;
+    min-height: 250px;
   }
 
   .hero__title {
@@ -164,7 +164,7 @@
 /* Mobile */
 @media (max-width: 768px) {
   .hero {
-    min-height: 300px;
+    min-height: 200px;
     padding: var(--space-xl) var(--space-md);
   }
 
@@ -197,7 +197,7 @@
   }
 
   .hero--compact {
-    min-height: 220px;
+    min-height: 120px;
   }
 
   .hero--compact .hero__title {
