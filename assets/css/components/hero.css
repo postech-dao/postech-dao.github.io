@@ -2,10 +2,10 @@
 
 .hero {
   position: relative;
-  min-height: 300px;
+  min-height: 500px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   overflow: hidden;
   background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
   padding: var(--space-2xl) var(--space-lg);
@@ -33,12 +33,31 @@
 .hero__content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
-  text-align: center;
+  max-width: 600px;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-lg);
+  flex: 1;
+}
+
+/* Hero 3D Container */
+.hero__3d {
+  position: relative;
+  z-index: 1;
+  width: 450px;
+  height: 450px;
+  flex-shrink: 0;
+}
+
+.hero__3d canvas {
+  display: block;
+  cursor: grab;
+}
+
+.hero__3d canvas:active {
+  cursor: grabbing;
 }
 
 /* Hero Label */
@@ -164,8 +183,20 @@
 /* Mobile */
 @media (max-width: 768px) {
   .hero {
-    min-height: 200px;
+    min-height: 600px;
     padding: var(--space-xl) var(--space-md);
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .hero__content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero__3d {
+    width: 300px;
+    height: 300px;
   }
 
   .hero__title {

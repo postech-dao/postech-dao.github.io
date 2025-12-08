@@ -47,6 +47,14 @@ async function init() {
     initMediumFeed();
   }
 
+  // Initialize 3D hero (only on pages with hero-3d-container)
+  if (document.getElementById('hero-3d-container')) {
+    // Dynamically import hero-3d module only when needed
+    import('./modules/hero-3d.js')
+      .then(module => module.initHero3D())
+      .catch(err => console.error('Failed to load 3D hero:', err));
+  }
+
   // Add smooth scroll behavior for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

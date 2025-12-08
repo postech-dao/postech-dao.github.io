@@ -56,18 +56,20 @@
   <!-- Main Content -->
   <main class="main-content">
     <!-- Hero Section -->
-    <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/poster2.png') center/cover no-repeat;">
+    <section class="hero">
+      <div class="hero__decoration hero__decoration--circle"></div>
+      <div class="hero__decoration hero__decoration--blur"></div>
+
       <div class="hero__content">
         <span class="hero__label">PDAO Research</span>
         <h1 class="hero__title hero__title--gradient">Unlock Web3 with Clarity</h1>
         <p class="hero__subtitle">
           PDAO는 포스텍 기반 블록체인 연구와 프로젝트를 통해 탈중앙화 기술의 미래를 만들어갑니다.
         </p>
-        <div class="hero__actions">
-          <a href="https://discord.gg/tf9v5hHpzW" target="_blank" class="btn btn--primary btn--large">Join Community</a>
-          <a href="https://github.com/postech-dao/pdao/blob/main/README.md" target="_blank" class="btn btn--ghost btn--large">Learn More</a>
-        </div>
       </div>
+
+      <!-- 3D WebGL Element -->
+      <div id="hero-3d-container" class="hero__3d"></div>
     </section>
 
     <!-- Medium Posts Section -->
@@ -123,7 +125,8 @@
                 Governance, P2P Communication, and Consensus.
                 심퍼비의 프로토콜과 작동 방식을 알아보세요.
               </p>
-              <a href="https://github.com/postech-dao/simperby/blob/main/docs/protocol_overview.md" target="_blank" class="btn btn--secondary mt-md">
+              <a href="https://github.com/postech-dao/simperby/blob/main/docs/protocol_overview.md" target="_blank"
+                class="btn btn--secondary mt-md">
                 Read Protocol
               </a>
             </div>
@@ -157,6 +160,16 @@
     <!-- Footer Placeholder - Loaded dynamically -->
     <div id="footer-placeholder"></div>
   </main>
+
+  <!-- Three.js Library -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
 
   <!-- JavaScript Module -->
   <script type="module" src="assets/js/app.js"></script>
