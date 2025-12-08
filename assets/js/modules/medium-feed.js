@@ -25,19 +25,40 @@ const CORS_PROXIES = [
 ];
 
 let mediumPostsCache = [];
-let isViewAll = false;
-const DEFAULT_VISIBLE_COUNT = 3;
+const CARD_MIN_WIDTH = 300;
+const MIN_VISIBLE_COUNT = 3;
+
+/**
+ * Calculate how many cards fit in one row
+ */
+function getCardsPerRow() {
+  const container = document.getElementById('medium-posts');
+  if (!container) return MIN_VISIBLE_COUNT;
+
+  const containerWidth = container.clientWidth;
+  const count = Math.floor(containerWidth / CARD_MIN_WIDTH);
+  return Math.max(count, MIN_VISIBLE_COUNT);
+}
 
 /**
  * Initialize Medium feed functionality
  */
 export function initMediumFeed() {
-  const viewAllBtn = document.getElementById('view-all-btn');
-  if (viewAllBtn) {
-    viewAllBtn.addEventListener('click', onToggleViewAll);
-  }
-
   loadMediumPosts();
+
+  // Re-render on resize to adjust visible count
+  window.addEventListener('resize', debounce(renderMediumPosts, 200));
+}
+
+/**
+ * Debounce utility
+ */
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
 }
 
 /**
@@ -178,14 +199,10 @@ function renderMediumPosts() {
   if (!container) return;
 
   const posts = mediumPostsCache || [];
-
-  const visiblePosts = isViewAll
-    ? posts
-    : posts.slice(0, DEFAULT_VISIBLE_COUNT);
+  const visibleCount = getCardsPerRow();
+  const visiblePosts = posts.slice(0, visibleCount);
 
   container.innerHTML = visiblePosts.map(renderMediumPost).join('');
-
-  updateViewAllButton(posts.length);
 }
 
 /**
@@ -213,30 +230,6 @@ function renderMediumPost(post) {
       </div>
     </a>
   `;
-}
-
-/**
- * Toggle between showing all posts and limited posts
- */
-function onToggleViewAll() {
-  isViewAll = !isViewAll;
-  renderMediumPosts();
-}
-
-/**
- * Update the View all button text and visibility
- */
-function updateViewAllButton(totalCount) {
-  const btn = document.getElementById('view-all-btn');
-  if (!btn) return;
-
-  if (totalCount <= DEFAULT_VISIBLE_COUNT) {
-    btn.style.display = 'none';
-    return;
-  }
-
-  btn.style.display = 'inline-block';
-  btn.textContent = isViewAll ? 'Show less' : 'View all';
 }
 
 /**
