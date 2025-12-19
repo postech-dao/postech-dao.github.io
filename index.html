@@ -60,16 +60,18 @@
       <div class="hero__decoration hero__decoration--circle"></div>
       <div class="hero__decoration hero__decoration--blur"></div>
 
-      <div class="hero__content">
-        <span class="hero__label" data-i18n="hero.label">PDAO Research</span>
-        <h1 class="hero__title hero__title--gradient" data-i18n="hero.title">Unlock Web3 with Clarity</h1>
-        <p class="hero__subtitle" data-i18n="hero.subtitle">
-          PDAO는 포스텍 기반 블록체인 연구와 프로젝트를 통해 탈중앙화 기술의 미래를 만들어갑니다.
-        </p>
-      </div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="hero__label" data-i18n="hero.label">PDAO Research</span>
+          <h1 class="hero__title hero__title--gradient" data-i18n="hero.title">Unlock Web3 with Clarity</h1>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">
+            PDAO는 포스텍 기반 블록체인 연구와 프로젝트를 통해 탈중앙화 기술의 미래를 만들어갑니다.
+          </p>
+        </div>
 
-      <!-- 3D WebGL Element -->
-      <div id="hero-3d-container" class="hero__3d"></div>
+        <!-- 3D WebGL Element -->
+        <div id="hero-3d-container" class="hero__3d"></div>
+      </div>
     </section>
 
     <!-- Medium Posts Section -->
@@ -96,15 +98,15 @@
     </section>
 
     <!-- Simperby Section -->
-    <section class="section" style="background: var(--bg-secondary);">
+    <section class="section">
       <div class="container">
         <div class="section__header">
-          <h2 class="section__title" data-i18n="sections.simperbyTitle">Simperby: The Heart of PDAO</h2>
-          <a href="simperby.html" class="section__link" data-i18n="sections.viewProject">View Project →</a>
+          <h2 class="section__title section__title--articles" data-i18n="sections.simperbyTitle">Simperby: The Heart of PDAO</h2>
+          <a href="simperby.html" class="section__link section__link--view-all" data-i18n="sections.viewProject">VIEW PROJECT ↗</a>
         </div>
 
         <div class="card-grid card-grid--2col">
-          <article class="card card--large">
+          <article class="card">
             <div class="card__image-wrapper">
               <img src="images/poppin/6.png" alt="Simperby">
             </div>
@@ -115,13 +117,15 @@
                 A brand new blockchain engine we're building. Simperby는 PDAO의 핵심 프로젝트로,
                 혁신적인 블록체인 엔진을 개발하고 있습니다.
               </p>
-              <a href="https://github.com/postech-dao/simperby" target="_blank" class="btn btn--secondary mt-md" data-i18n="simperby.viewGithub">
-                View on GitHub
-              </a>
+              <div class="mt-md">
+                <a href="https://github.com/postech-dao/simperby" target="_blank" class="btn btn--primary" data-i18n="simperby.viewGithub">
+                  View on GitHub
+                </a>
+              </div>
             </div>
           </article>
 
-          <article class="card card--large">
+          <article class="card">
             <div class="card__image-wrapper">
               <img src="images/poppin/6.png" alt="Simperby Protocol">
             </div>
@@ -132,10 +136,12 @@
                 Governance, P2P Communication, and Consensus.
                 심퍼비의 프로토콜과 작동 방식을 알아보세요.
               </p>
-              <a href="https://github.com/postech-dao/simperby/blob/main/docs/protocol_overview.md" target="_blank"
-                class="btn btn--secondary mt-md" data-i18n="simperby.readProtocol">
-                Read Protocol
-              </a>
+              <div class="mt-md">
+                <a href="https://github.com/postech-dao/simperby/blob/main/docs/protocol_overview.md" target="_blank"
+                  class="btn btn--secondary" data-i18n="simperby.readProtocol">
+                  Read Protocol
+                </a>
+              </div>
             </div>
           </article>
         </div>

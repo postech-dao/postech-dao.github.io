@@ -5,65 +5,43 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-lg);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
+  padding: var(--space-sm) var(--space-xl);
+  font-size: 11px;
+  font-weight: 700;
   text-align: center;
   text-decoration: none;
-  border: none;
-  border-radius: var(--radius-md);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all var(--transition-base);
   white-space: nowrap;
 }
 
-.btn:focus {
-  outline: 2px solid var(--brand-main);
-  outline-offset: 2px;
-}
-
-/* Primary Button (Brand Color) */
+/* Primary Button (Dark/Modern) */
 .btn--primary {
-  background: var(--brand-main);
-  color: var(--text-primary);
-  border: 1px solid var(--brand-main);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border: 1px solid var(--text-primary);
 }
 
 .btn--primary:hover {
-  background: var(--brand-hover);
-  border-color: var(--brand-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(200, 8, 100, 0.3);
+  background: transparent;
+  color: var(--text-primary);
+  transform: translateY(-1px);
 }
 
-.btn--primary:active {
-  transform: translateY(0);
-}
-
-/* Ghost Button (Outline) */
-.btn--ghost {
+/* Secondary Button */
+.btn--secondary {
   background: transparent;
   color: var(--text-primary);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.btn--ghost:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.4);
-  transform: translateY(-2px);
-}
-
-/* Secondary Button */
-.btn--secondary {
-  background: var(--bg-surface);
-  color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 .btn--secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
 }
 
 /* Icon Button */

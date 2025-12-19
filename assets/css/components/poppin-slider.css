@@ -12,13 +12,11 @@
 }
 
 .poppin-title {
-    font-size: var(--font-size-4xl);
+    font-size: 64px;
     font-weight: 900;
     margin-bottom: var(--space-sm);
-    background: linear-gradient(135deg, #fff 0%, var(--brand-main) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
 .poppin-subtitle {
@@ -53,11 +51,11 @@
 .poppin-card {
     flex: 0 0 300px;
     height: 400px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
+    background: var(--bg-primary);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
     position: relative;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s ease;
+    transition: all 0.4s ease;
     scroll-snap-align: center;
     display: flex;
     flex-direction: column;
@@ -65,7 +63,6 @@
     padding: var(--space-lg);
     cursor: pointer;
     overflow: visible;
-    /* Allow image to pop out */
 }
 
 /* Glassmorphism gradient overlay */
@@ -73,35 +70,33 @@
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 30px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    border-radius: var(--radius-md);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
     z-index: 1;
 }
 
 .poppin-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: var(--brand-main);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+    background: var(--bg-secondary);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Character Image */
 .poppin-card__image {
     position: absolute;
-    top: -60px;
+    top: -40px;
     /* Pop out effect */
     left: 50%;
     transform: translateX(-50%);
-    width: 240px;
-    height: 280px;
+    width: 220px;
+    height: 260px;
     object-fit: contain;
     z-index: 2;
     transition: transform 0.4s ease;
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
 }
 
 .poppin-card:hover .poppin-card__image {
-    transform: translateX(-50%) scale(1.1) translateY(-10px);
+    transform: translateX(-50%) translateY(-10px);
 }
 
 /* Card Content */
@@ -130,12 +125,14 @@
     bottom: var(--space-lg);
     right: var(--space-lg);
     z-index: 3;
-    background: var(--brand-main);
-    color: #fff;
+    background: var(--text-primary);
+    color: var(--bg-primary);
     padding: 8px 16px;
-    border-radius: 20px;
-    font-size: var(--font-size-xs);
-    font-weight: 600;
+    border-radius: var(--radius-sm);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     opacity: 0;
     transform: translateY(10px);
     transition: all 0.3s ease;

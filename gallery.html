@@ -1,168 +1,114 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;">
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <meta name="keywords" content="Decentralize.">
-  <meta name="description" content="Postech Decentralized Autonomous Organization">
-  <meta name="page_type" content="website">
-  <title>PDAO</title>
-  <link rel="stylesheet" href="nicepage.css" media="screen">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="PDAO.css" media="screen">
-  <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-  <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+  <meta name="description" content="PDAO Gallery - Our Activities and Memories">
+  <meta name="keywords" content="PDAO, gallery, blockchain, POSTECH, memories">
+
+  <title>Gallery - PDAO</title>
+
+  <!-- Favicon -->
   <link rel="icon" href="images/logo/favicon1.png">
-  <link id="u-theme-google-font" rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-  <link id="u-page-google-font" rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
 
-  <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "PDAO",
-		"sameAs": [
-				"https://twitter.com/postech_dao",
-				"https://discord.gg/tf9v5hHpzW",
-				"https://github.com/postech-dao",
-				"https://medium.com/postech-dao",
-				"https://www.youtube.com/channel/UCBU7VcTAizK_btu96oQ0qmg"
-		]
-}</script>
-  <meta name="theme-color" content="#478ac9">
-  <meta name="twitter:site" content="@">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PDAO">
-  <meta name="twitter:description" content="Postech Decentralized Autonomous Organization">
-  <meta property="og:title" content="PDAO" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://dao.postech.ac.kr/" />
-  <meta property="og:image" content="https://dao.postech.ac.kr/banner.png" />
-  <meta property="og:description" content="Postech Decentralized Autonomous Organization" />
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <style>
+    .gallery-swiper {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 400px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 
-<body data-home-page="PDAO.html" data-home-page-title="PDAO" class="u-body u-xl-mode">
-  <header class="u-clearfix u-header u-palette-2-base u-header" id="sec-16db">
-    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-xl u-sheet-1">
-      <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/postech.png" alt=""
-        data-image-width="548" data-image-height="548">
-      <img class="u-image u-image-default u-preserve-proportions u-image-2" src="images/logo/favicon.png" alt=""
-        data-image-width="4000" data-image-height="4000">
-      <h1 class="u-align-center u-text u-text-default u-title u-text-1">Decentralize.</h1>
-    </div>
-  </header>
+<body>
+  <!-- Sidebar Placeholder - Loaded dynamically -->
+  <div id="sidebar-placeholder"></div>
 
-  <section class="u-clearfix u-section-1" id="sec-gallery">
-    <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="images/poppin/6.png" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-              </div>
-              <div class="swiper-slide">
-                <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-              </div>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="hero__label">Memories</span>
+          <h1 class="hero__title">PDAO Gallery</h1>
+          <p class="hero__subtitle">
+            Our journey in the blockchain space.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section">
+      <div class="container">
+        <div class="swiper mySwiper gallery-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="images/poppin/6.png" />
             </div>
-            <div class="swiper-pagination"></div>
+            <!-- Add more slides as needed -->
           </div>
-    </div>
-  </section>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
 
-  <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-palette-2-base"
-    id="sec-3f57">
-    <div class="u-clearfix u-sheet u-sheet-1">
-      <img class="u-image u-image-default u-preserve-proportions u-image-1" src="images/logo/favicon.png" alt=""
-        data-image-width="4000" data-image-height="4000">
-      <img class="u-image u-image-default u-preserve-proportions u-image-2" src="images/postech.png" alt=""
-        data-image-width="548" data-image-height="548">
-      <div class="u-align-center u-social-icons u-spacing-72 u-social-icons-1">
-        <a class="u-social-url" title="Twitter" target="_blank" href="https://twitter.com/postech_dao"><span
-            class="u-file-icon u-icon u-social-icon u-social-twitter u-icon-1"><img src="images/logo/733635.png"
-              alt=""></span>
-        </a>
-        <a class="u-social-url" target="_blank" data-type="Custom" title="Discord"
-          href="https://discord.gg/tf9v5hHpzW"><span
-            class="u-file-icon u-icon u-social-custom u-social-icon u-icon-2"><img src="images/logo/5968898.png"
-              alt=""></span>
-        </a>
-      </div>
-      <div class="u-align-center u-social-icons u-spacing-72 u-social-icons-2">
-        <a class="u-social-url" title="Github" target="_blank" href="https://github.com/postech-dao"><span
-            class="u-file-icon u-icon u-social-icon u-social-twitter u-icon-3"><img src="images/logo/7336091.png"
-              alt=""></span>
-        </a>
-        <a class="u-social-url" target="_blank" data-type="Custom" title="Medium"
-          href="https://medium.com/postech-dao"><span
-            class="u-file-icon u-icon u-social-custom u-social-icon u-icon-4"><img src="images/logo/21115432.png"
-              alt=""></span>
-        </a>
-      </div>
-      <div class="u-align-center u-social-icons u-spacing-72 u-social-icons-3">
-        <a class="u-social-url" title="Youtube" target="_blank"
-          href="https://www.youtube.com/channel/UCBU7VcTAizK_btu96oQ0qmg"><span
-            class="u-file-icon u-icon u-social-icon u-social-twitter u-icon-5"><img src="images/logo/13840281.png"
-              alt=""></span>
-        </a>
-        <a class="u-social-url" target="_blank" data-type="Custom" title="KaKaoTalk"
-          href="https://open.kakao.com/o/gdz1hQce"><span
-            class="u-file-icon u-icon u-social-icon u-social-twitter u-icon-5"><img src="images/logo/kakao.png"
-              alt=""></span>
-        </a>
-      </div>
-      <div class="u-border-1 u-border-white u-expanded-width u-line u-line-horizontal u-opacity u-opacity-50 u-line-1">
-      </div>
-      <p class="u-align-center-lg u-align-center-xl u-text u-text-1">Postech DAO<br>Join the next-level community.<br>
-        junha1@postech.ac.kr
-      </p>
-    </div>
-  </footer>
+    <!-- Footer Placeholder - Loaded dynamically -->
+    <div id="footer-placeholder"></div>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.11/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.4.2/i18nextHttpBackend.min.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
   <script>
-    let swiper = new Swiper(".mySwiper", {
-      effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: "auto",
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
+    document.addEventListener('DOMContentLoaded', () => {
+      let swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+          rotate: 30,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
     });
   </script>
 </body>
-
-
 
 </html>
