@@ -76,13 +76,20 @@
     <section class="section" id="medium-section">
       <div class="container">
         <div class="section__header">
-          <h2 class="section__title" data-i18n="sections.insights">PDAO Insights</h2>
-          <a href="https://medium.com/postech-dao" target="_blank" class="section__link" data-i18n="sections.viewOnMedium">View on Medium →</a>
+          <h2 class="section__title section__title--articles" data-i18n="sections.insights">ARTICLES</h2>
+          <a href="https://medium.com/postech-dao" target="_blank" class="section__link section__link--view-all" data-i18n="sections.viewOnMedium">VIEW ALL ↗</a>
         </div>
 
         <!-- Medium posts loaded dynamically -->
-        <div id="medium-posts" class="card-grid card-grid--3col">
-          <!-- JS에서 동적으로 채움 -->
+        <div id="medium-posts" class="medium-feed">
+          <!-- Featured post on the left -->
+          <div id="medium-featured" class="medium-feed__featured">
+            <!-- JS에서 동적으로 채움 -->
+          </div>
+          <!-- Smaller posts on the right -->
+          <div id="medium-list" class="medium-feed__list">
+            <!-- JS에서 동적으로 채움 -->
+          </div>
         </div>
 
       </div>

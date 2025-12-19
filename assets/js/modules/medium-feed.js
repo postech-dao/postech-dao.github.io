@@ -25,41 +25,15 @@ const CORS_PROXIES = [
 ];
 
 let mediumPostsCache = [];
-const CARD_MIN_WIDTH = 300;
-const MIN_VISIBLE_COUNT = 3;
-
-/**
- * Calculate how many cards fit in one row
- */
-function getCardsPerRow() {
-  const container = document.getElementById('medium-posts');
-  if (!container) return MIN_VISIBLE_COUNT;
-
-  const containerWidth = container.clientWidth;
-  const count = Math.floor(containerWidth / CARD_MIN_WIDTH);
-  return Math.max(count, MIN_VISIBLE_COUNT);
-}
+const MAX_LIST_POSTS = 3; // Number of smaller posts to show on the right
 
 /**
  * Initialize Medium feed functionality
  */
 export function initMediumFeed() {
   loadMediumPosts();
-
-  // Re-render on resize to adjust visible count
-  window.addEventListener('resize', debounce(renderMediumPosts, 200));
 }
 
-/**
- * Debounce utility
- */
-function debounce(fn, delay) {
-  let timer;
-  return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => fn.apply(this, args), delay);
-  };
-}
 
 /**
  * Try fetching RSS through multiple proxy services
@@ -93,17 +67,20 @@ async function fetchWithProxy(feedUrl) {
  * Load Medium posts from RSS feed
  */
 async function loadMediumPosts() {
-  const container = document.getElementById('medium-posts');
-  if (!container) return;
+  const featuredContainer = document.getElementById('medium-featured');
+  const listContainer = document.getElementById('medium-list');
 
-  container.innerHTML = '<p class="loading">Loading Medium posts...</p>';
+  if (!featuredContainer || !listContainer) return;
+
+  featuredContainer.innerHTML = '<p class="loading">Loading Medium posts...</p>';
+  listContainer.innerHTML = '';
 
   try {
     const rssString = await fetchWithProxy(MEDIUM_FEED_URL);
     const posts = parseMediumRss(rssString);
 
     if (!Array.isArray(posts) || posts.length === 0) {
-      container.innerHTML = '<p class="empty">No posts found.</p>';
+      featuredContainer.innerHTML = '<p class="empty">No posts found.</p>';
       return;
     }
 
@@ -111,7 +88,7 @@ async function loadMediumPosts() {
     renderMediumPosts();
   } catch (err) {
     console.error('Medium feed error:', err);
-    container.innerHTML = '<p class="error">Failed to load Medium posts.</p>';
+    featuredContainer.innerHTML = '<p class="error">Failed to load Medium posts.</p>';
   }
 }
 
@@ -133,6 +110,7 @@ function parseMediumRss(rssString) {
 
     // Medium uses content:encoded for full HTML content with images
     const contentEncoded = item.getElementsByTagName('content:encoded')[0]?.textContent || '';
+    const creator = item.getElementsByTagName('dc:creator')[0]?.textContent || '';
 
     const publishedAt = toIsoDate(pubDate);
     const summary = buildSummaryFromDescription(description);
@@ -144,6 +122,7 @@ function parseMediumRss(rssString) {
     return {
       id: guid,
       title,
+      author: creator,
       url: link,
       summary,
       publishedAt,
@@ -195,51 +174,109 @@ function extractThumbnailFromDescription(htmlString) {
  * Render Medium posts to the container
  */
 function renderMediumPosts() {
-  const container = document.getElementById('medium-posts');
-  if (!container) return;
+  const featuredContainer = document.getElementById('medium-featured');
+  const listContainer = document.getElementById('medium-list');
+
+  if (!featuredContainer || !listContainer) return;
 
   const posts = mediumPostsCache || [];
-  const visibleCount = getCardsPerRow();
-  const visiblePosts = posts.slice(0, visibleCount);
 
-  container.innerHTML = visiblePosts.map(renderMediumPost).join('');
+  if (posts.length === 0) {
+    featuredContainer.innerHTML = '<p class="empty">No posts found.</p>';
+    listContainer.innerHTML = '';
+    return;
+  }
+
+  // Render the first post as featured (large)
+  const [featuredPost, ...remainingPosts] = posts;
+  featuredContainer.innerHTML = renderFeaturedPost(featuredPost);
+
+  // Render up to MAX_LIST_POSTS smaller posts
+  const listPosts = remainingPosts.slice(0, MAX_LIST_POSTS);
+  listContainer.innerHTML = listPosts.map(renderListPost).join('');
 }
 
 /**
- * Render a single Medium post card
+ * Render the featured post (large card on the left)
  */
-function renderMediumPost(post) {
+function renderFeaturedPost(post) {
   const date = formatDate(post.publishedAt);
   const title = escapeHtml(post.title);
   const summary = escapeHtml(post.summary || '');
+  const author = escapeHtml(post.author || 'PDAO');
 
   const thumbnailImg = post.thumbnail
-    ? `<div class="card__image-wrapper"><img src="${post.thumbnail}" alt="${title}" /></div>`
-    : `<div class="card__image-wrapper"><img src="images/6.png" alt="${title}" /></div>`;
+    ? `<img src="${post.thumbnail}" alt="${title}" />`
+    : `<img src="images/poppin/6.png" alt="${title}" />`;
 
   return `
-    <a href="${post.url}" target="_blank" rel="noopener noreferrer" class="card">
-      ${thumbnailImg}
-      <div class="card__content">
-        <span class="card__tag">Medium</span>
-        <h3 class="card__title">${title}</h3>
-        <p class="card__description">${summary}</p>
-        <div class="card__meta">
-          <span>${date}</span>
+    <div class="article-featured">
+      <a href="${post.url}" target="_blank" rel="noopener noreferrer" class="article-featured__image">
+        ${thumbnailImg}
+      </a>
+      <div class="article-featured__content">
+        <div class="article-featured__date">${date}</div>
+        <h3 class="article-featured__title">
+          <a href="${post.url}" target="_blank" rel="noopener noreferrer">${title}</a>
+        </h3>
+        <p class="article-featured__description">${summary}</p>
+        <div class="article-author">
+          <div class="article-author__avatar">
+            <img src="images/logo/favicon.png" alt="${author}">
+          </div>
+          <span class="article-author__name">${author}</span>
         </div>
       </div>
-    </a>
+    </div>
   `;
 }
 
 /**
- * Format ISO date string to readable format
+ * Render a smaller post in the list (right side)
+ */
+function renderListPost(post) {
+  const date = formatDate(post.publishedAt);
+  const title = escapeHtml(post.title);
+  const author = escapeHtml(post.author || 'PDAO');
+
+  const thumbnailImg = post.thumbnail
+    ? `<img src="${post.thumbnail}" alt="${title}" />`
+    : `<img src="images/poppin/6.png" alt="${title}" />`;
+
+  return `
+    <div class="article-item">
+      <a href="${post.url}" target="_blank" rel="noopener noreferrer" class="article-item__image">
+        ${thumbnailImg}
+      </a>
+      <div class="article-item__content">
+        <div class="article-item__date">${date}</div>
+        <h4 class="article-item__title">
+          <a href="${post.url}" target="_blank" rel="noopener noreferrer">${title}</a>
+        </h4>
+        <div class="article-author">
+          <div class="article-author__avatar">
+            <img src="images/logo/favicon.png" alt="${author}">
+          </div>
+          <span class="article-author__name">${author}</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/**
+ * Format ISO date string to readable format: Month Day, Year
  */
 function formatDate(isoString) {
   if (!isoString) return '';
   const d = new Date(isoString);
   if (Number.isNaN(d.getTime())) return '';
-  return d.toISOString().slice(0, 10);
+  
+  return d.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric'
+  });
 }
 
 /**
