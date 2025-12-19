@@ -62,11 +62,24 @@ export async function initFooterComponent() {
 }
 
 /**
+ * Initialize CTA section component
+ */
+export async function initCTAComponent() {
+  const ctaPlaceholder = document.getElementById('cta-placeholder');
+
+  if (ctaPlaceholder) {
+    const ctaHTML = await loadComponent('components/cta-section.html');
+    ctaPlaceholder.outerHTML = ctaHTML;
+  }
+}
+
+/**
  * Initialize all components
  */
 export async function initComponents() {
   await Promise.all([
     initSidebarComponent(),
+    initCTAComponent(),
     initFooterComponent()
   ]);
 }
