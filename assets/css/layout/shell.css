@@ -75,6 +75,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .nav-group__title {
@@ -160,6 +162,71 @@ body {
   opacity: 1;
 }
 
+/* External link styling */
+.nav-link--external {
+  justify-content: space-between;
+}
+
+/* External link icon */
+.nav-external-icon {
+  width: 12px;
+  height: 12px;
+  margin-left: auto;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.nav-link--external:hover .nav-external-icon {
+  opacity: 0.7;
+  transform: translate(2px, -2px);
+}
+
+/* Sidebar Language Toggle */
+.sidebar__language {
+  margin-top: auto;
+}
+
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.language-toggle:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.language-toggle__icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;
+  transition: opacity var(--transition-base);
+}
+
+.language-toggle:hover .language-toggle__icon {
+  opacity: 1;
+}
+
+.language-toggle__text {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
 /* Main Content Area */
 .main-content {
   padding: 0;
@@ -190,6 +257,15 @@ body {
 
   .sidebar__brand-sub {
     display: none;
+  }
+
+  .language-toggle__text {
+    display: none;
+  }
+
+  .language-toggle {
+    justify-content: center;
+    padding: var(--space-sm);
   }
 }
 
@@ -264,6 +340,25 @@ body {
 
   .nav-text {
     display: inline;
+  }
+
+  .sidebar__language {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--space-md);
+    background: var(--bg-secondary);
+    border-top: var(--glass-border);
+    z-index: 101;
+  }
+
+  .language-toggle__text {
+    display: inline;
+  }
+
+  .language-toggle {
+    justify-content: flex-start;
   }
 
   /* Main content adjustment for mobile header */

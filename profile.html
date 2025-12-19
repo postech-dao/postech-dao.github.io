@@ -41,9 +41,9 @@
       <div class="hero__decoration hero__decoration--blur"></div>
 
       <div class="hero__content">
-        <span class="hero__label">Team</span>
-        <h1 class="hero__title">PDAO Members</h1>
-        <p class="hero__subtitle">
+        <span class="hero__label" data-i18n="profile.recruit">Team</span>
+        <h1 class="hero__title" data-i18n="profile.joinMovement">PDAO Members</h1>
+        <p class="hero__subtitle" data-i18n="profile.joinDesc">
           블록체인의 미래를 함께 만들어가는 PDAO 멤버들을 소개합니다.
         </p>
       </div>
@@ -209,17 +209,17 @@
       <div class="container">
         <div class="hero hero--compact">
           <div class="hero__content">
-            <h2 class="hero__title">Join Our Team</h2>
-            <p class="hero__subtitle">
+            <h2 class="hero__title" data-i18n="profile.joinPdao">Join Our Team</h2>
+            <p class="hero__subtitle" data-i18n="profile.joinPdaoDesc">
               PDAO와 함께 블록체인의 미래를 만들어가고 싶으신가요?<br>
               지금 바로 지원하세요!
             </p>
             <div class="hero__actions">
               <a href="https://github.com/postech-dao/simperby/wiki/2022-recruit" target="_blank"
-                class="btn btn--primary btn--large">
+                class="btn btn--primary btn--large" data-i18n="profile.applyNow">
                 Apply Now
               </a>
-              <a href="https://discord.gg/tf9v5hHpzW" target="_blank" class="btn btn--ghost btn--large">
+              <a href="https://discord.gg/tf9v5hHpzW" target="_blank" class="btn btn--ghost btn--large" data-i18n="buttons.joinDiscord">
                 Join Discord
               </a>
             </div>
@@ -233,6 +233,11 @@
   </main>
 
   <!-- JavaScript Module -->
+  <!-- i18next Library -->
+  <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.11/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.4.2/i18nextHttpBackend.min.js"></script>
+
+
   <script type="module" src="assets/js/app.js"></script>
 </body>
 

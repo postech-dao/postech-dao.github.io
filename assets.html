@@ -42,9 +42,9 @@
       <div class="hero__decoration hero__decoration--blur"></div>
 
       <div class="hero__content">
-        <span class="hero__label">Assets</span>
-        <h1 class="hero__title">Meet the Poppins</h1>
-        <p class="hero__subtitle">
+        <span class="hero__label" data-i18n="assets.brandAssets">Assets</span>
+        <h1 class="hero__title" data-i18n="assets.downloadAssets">Meet the Poppins</h1>
+        <p class="hero__subtitle" data-i18n="assets.assetsDesc">
           Explore our collection of 3D Poppin characters.
           Download high-quality assets for your projects.
         </p>
@@ -213,7 +213,7 @@
     <section class="section" id="logo">
       <div class="container">
         <div class="section__header">
-          <h2 class="section__title">Logo</h2>
+          <h2 class="section__title" data-i18n="assets.logo">Logo</h2>
         </div>
 
         <div class="card-grid card-grid--3col">
@@ -270,6 +270,11 @@
   </main>
 
   <!-- JavaScript Module -->
+  <!-- i18next Library -->
+  <script src="https://cdn.jsdelivr.net/npm/i18next@23.7.11/i18next.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@2.4.2/i18nextHttpBackend.min.js"></script>
+
+
   <script type="module" src="assets/js/app.js"></script>
 
   <!-- Poppin Slider Script -->

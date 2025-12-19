@@ -6,6 +6,7 @@
 import { initSidebar } from './modules/sidebar.js';
 import { initComponents } from './modules/components.js';
 import { initMediumFeed } from './modules/medium-feed.js';
+import { initI18n } from './modules/i18n.js';
 
 /**
  * Set active navigation link based on current page
@@ -32,6 +33,9 @@ function setActiveNavLink() {
  */
 async function init() {
   console.log('PDAO Website initialized');
+
+  // Initialize i18n first
+  await initI18n();
 
   // Load dynamic components (sidebar, footer)
   await initComponents();
