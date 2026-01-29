@@ -14,7 +14,10 @@
     "github": "GitHub",
     "medium": "Medium",
     "youtube": "Youtube",
-    "instagram": "Instagram"
+    "instagram": "Instagram",
+    "founder": "Founder",
+    "organizer": "Organizer / Director",
+    "contributor": "Contributor"
   },
   "hero": {
     "label": "",
@@ -126,6 +129,9 @@
     "assets": "Assets",
     "profile": "Profile",
     "team": "Team",
+    "founder": "Founder",
+    "organizer": "Organizer / Director",
+    "contributor": "Contributor",
     "copyright": "© 2024 Postech DAO. All rights reserved."
   }
 }
