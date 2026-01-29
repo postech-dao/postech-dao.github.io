@@ -89,9 +89,9 @@
     "instagramDesc": "일상과 소식"
   },
   "profile": {
-    "recruit": "RECRUIT",
-    "joinMovement": "Join the Movement",
-    "joinDesc": "PDAO와 함께 블록체인의 미래를 만들어갈 인재를 모집합니다.",
+    "recruit": "MEMBER",
+    "joinMovement": "PROFILE",
+    "joinDesc": "PDAO를 함께 만들어가는 사람들을 소개합니다.",
     "weAreLooking": "We're Looking For",
     "developers": "Developers",
     "developersDesc": "Rust, TypeScript, Smart Contract 개발자",

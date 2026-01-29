@@ -89,9 +89,9 @@
     "instagramDesc": "Daily life and news"
   },
   "profile": {
-    "recruit": "RECRUIT",
-    "joinMovement": "Join the Movement",
-    "joinDesc": "We are recruiting talented individuals to create the future of blockchain with PDAO.",
+    "recruit": "MEMBER",
+    "joinMovement": "PROFILE",
+    "joinDesc": "Introducing the people building PDAO together.",
     "weAreLooking": "We're Looking For",
     "developers": "Developers",
     "developersDesc": "Rust, TypeScript, Smart Contract developers",

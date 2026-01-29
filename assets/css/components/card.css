@@ -3,8 +3,10 @@
 .card {
   display: flex;
   flex-direction: column;
-  background: transparent; /* Changed from var(--bg-surface) */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Use borders as separators */
+  background: transparent;
+  /* Changed from var(--bg-surface) */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  /* Use borders as separators */
   border-radius: 0;
   overflow: hidden;
   transition: transform var(--transition-base), opacity var(--transition-base);
@@ -110,7 +112,8 @@
 /* Grid Layouts */
 .card-grid {
   display: grid;
-  gap: 0; /* Remove gap, use padding/borders on cards */
+  gap: 0;
+  /* Remove gap, use padding/borders on cards */
   margin-bottom: var(--space-2xl);
 }
 
@@ -131,6 +134,7 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+
   .card-grid--3col,
   .card-grid--4col {
     grid-template-columns: repeat(2, 1fr);
@@ -138,16 +142,17 @@
 }
 
 @media (max-width: 768px) {
+
   .card-grid--2col,
   .card-grid--3col,
   .card-grid--4col {
     grid-template-columns: 1fr;
   }
-  
+
   .card--horizontal {
     flex-direction: column;
   }
-  
+
   .card--horizontal .card__image-wrapper {
     width: 100%;
     min-width: 100%;
@@ -185,7 +190,8 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 4px; /* Less rounded for modern look */
+  border-radius: 4px;
+  /* Less rounded for modern look */
   background: var(--bg-secondary);
 }
 
@@ -327,6 +333,37 @@
   object-fit: cover;
 }
 
+.card__socials {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: var(--text-muted);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all var(--transition-base);
+}
+
+.social-link:hover {
+  background: var(--brand-main);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.social-link svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
 .article-author__name {
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
@@ -366,7 +403,8 @@
 .section__title--articles {
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-weight: 400; /* More modern thin look */
+  font-weight: 400;
+  /* More modern thin look */
 }
 
 .section__link--view-all {
