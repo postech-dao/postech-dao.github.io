@@ -17,17 +17,17 @@
     "instagram": "Instagram"
   },
   "hero": {
-    "label": "PDAO Research",
-    "title": "Unlock Web3 with Clarity",
-    "subtitle": "PDAO creates the future of decentralization through POSTECH-based blockchain research and projects."
+    "label": "",
+    "title": "POSTECH-DAO",
+    "subtitle": "POSTECH-Oriented Nonprofit Blockchain Opensource Foundation"
   },
   "sections": {
     "insights": "ARTICLES",
     "viewOnMedium": "VIEW ALL ↗",
     "simperbyTitle": "Simperby: The Heart of PDAO",
     "viewProject": "View Project →",
-    "joinCommunity": "Join the Next-Level Community",
-    "communitySubtitle": "Connect with blockchain enthusiasts, researchers, and developers at POSTECH",
+    "joinCommunity": "Feel free to visit PDAO!",
+    "communitySubtitle": "Anyone interested in the blockchain ecosystem is welcome.",
     "links": "Links"
   },
   "simperby": {
@@ -68,8 +68,8 @@
     "joinTeam": "Join the Team"
   },
   "buttons": {
-    "joinDiscord": "Join Discord",
-    "viewGithub": "View GitHub",
+    "joinDiscord": "Discord",
+    "viewGithub": "LinkedIn",
     "discord": "Discord"
   },
   "about": {

@@ -17,17 +17,17 @@
     "instagram": "Instagram"
   },
   "hero": {
-    "label": "PDAO Research",
-    "title": "Unlock Web3 with Clarity",
-    "subtitle": "PDAO는 포스텍 기반 블록체인 연구와 프로젝트를 통해 탈중앙화 기술의 미래를 만들어갑니다."
+    "label": "",
+    "title": "POSTECH-DAO",
+    "subtitle": "PDAO는 포스텍 기반 비영리 블록체인 오픈소스 재단입니다."
   },
   "sections": {
     "insights": "ARTICLES",
     "viewOnMedium": "VIEW ALL ↗",
     "simperbyTitle": "Simperby: The Heart of PDAO",
     "viewProject": "View Project →",
-    "joinCommunity": "Join the Next-Level Community",
-    "communitySubtitle": "Connect with blockchain enthusiasts, researchers, and developers at POSTECH",
+    "joinCommunity": "PDAO에 놀러오세요!",
+    "communitySubtitle": "블록체인 생태계에 관심있는 사람 누구든 환영합니다.",
     "links": "Links"
   },
   "simperby": {
@@ -68,8 +68,8 @@
     "joinTeam": "Join the Team"
   },
   "buttons": {
-    "joinDiscord": "Join Discord",
-    "viewGithub": "View GitHub",
+    "joinDiscord": "디스코드",
+    "viewGithub": "링크드인",
     "discord": "Discord"
   },
   "about": {
