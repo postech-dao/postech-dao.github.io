@@ -52,6 +52,13 @@
   letter-spacing: 0.15em;
   color: var(--text-muted);
   margin-bottom: var(--space-lg);
+  text-decoration: none;
+  display: block;
+  transition: color var(--transition-base);
+}
+
+.footer__column-title:hover {
+  color: var(--text-primary);
 }
 
 .footer__link {
@@ -78,6 +85,16 @@
 .footer__copyright {
   font-size: var(--font-size-sm);
   color: var(--text-muted);
+}
+
+.footer__copyright a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.footer__copyright a:hover {
+  color: #FFFFFF;
 }
 
 /* Social Icons */
