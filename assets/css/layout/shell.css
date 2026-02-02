@@ -59,7 +59,7 @@ body {
 
 .sidebar__brand {
   font-size: 14px;
-  font-weight: 800;
+  font-weight: var(--font-weight-black);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
@@ -143,7 +143,7 @@ body {
 .nav-group__title {
   display: block;
   font-size: var(--font-size-xs);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
@@ -191,7 +191,7 @@ body {
 .nav-link.active {
   color: var(--text-primary);
   background: transparent;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .nav-link.active::before {
@@ -282,7 +282,7 @@ body {
 }
 
 .language-toggle__text {
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   letter-spacing: 0.05em;
   line-height: 1;
   display: flex;
@@ -369,7 +369,7 @@ body {
 
   .sidebar__brand {
     font-size: 13px;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     color: #ffffff;
     line-height: 1;
   }

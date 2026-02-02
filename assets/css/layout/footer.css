@@ -28,7 +28,7 @@
 
 .footer__brand-text {
   font-size: var(--font-size-xl);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 /* Footer Grid Layout */
@@ -47,7 +47,7 @@
 
 .footer__column-title {
   font-size: 10px;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--text-muted);

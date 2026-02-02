@@ -13,7 +13,7 @@
 
 .poppin-title {
     font-size: 64px;
-    font-weight: 900;
+    font-weight: var(--font-weight-black);
     margin-bottom: var(--space-sm);
     color: var(--text-primary);
     letter-spacing: -0.02em;
@@ -108,7 +108,7 @@
 
 .poppin-card__title {
     font-size: var(--font-size-2xl);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     color: #fff;
     margin: 0 0 var(--space-xs) 0;
 }
@@ -130,7 +130,7 @@
     padding: 8px 16px;
     border-radius: var(--radius-sm);
     font-size: 10px;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     opacity: 0;
