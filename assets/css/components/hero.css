@@ -67,6 +67,7 @@
   line-height: 1.6;
   max-width: 500px;
   font-weight: 300;
+  word-break: keep-all;
 }
 
 /* Hero 3D Container */
@@ -189,6 +190,9 @@
 
   .hero__subtitle {
     font-size: var(--font-size-base);
+    word-break: keep-all;
+    max-width: 100%;
+    padding: 0 var(--space-md);
   }
 
   .hero__actions {
@@ -216,6 +220,17 @@
   }
 
   .hero--compact .hero__title {
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* Small Mobile - Extra adjustments for very small screens */
+@media (max-width: 480px) {
+  .hero__subtitle {
+    font-size: var(--font-size-sm);
+  }
+
+  .hero__title {
     font-size: var(--font-size-xl);
   }
 }
