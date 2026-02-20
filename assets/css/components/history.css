@@ -1,0 +1,174 @@
+/* History Timeline - Musinsa-style vertical bar with inline year markers */
+
+.history-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Continuous thin vertical line (right edge of marker column) */
+.history-timeline::before {
+  content: '';
+  position: absolute;
+  left: 71px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  z-index: 0;
+}
+
+/* === Year Section (3-column row) === */
+.history-section {
+  display: grid;
+  grid-template-columns: 72px clamp(120px, 18vw, 200px) 1fr;
+  gap: var(--space-lg);
+  padding: var(--space-2xl) 0;
+}
+
+.history-section:first-child {
+  padding-top: 0;
+}
+
+/* Column 1: Year marker with vertical bar */
+.history-section__marker {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 6px;
+  padding-right: var(--space-md);
+}
+
+/* Thick active bar segment (overlays the thin line, extends through padding) */
+.history-section__marker::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: calc(-1 * var(--space-2xl));
+  bottom: calc(-1 * var(--space-2xl));
+  width: 3px;
+  background: transparent;
+  transition: background-color var(--transition-slow);
+  z-index: 1;
+}
+
+.history-section:first-child .history-section__marker::after {
+  top: 0;
+}
+
+.history-section__marker-year {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-slow), font-weight var(--transition-slow);
+}
+
+/* Column 2: Large year display */
+.history-section__year {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: var(--font-weight-black);
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  opacity: 0.15;
+  transition: opacity var(--transition-slow);
+}
+
+/* Column 3: Events list */
+.history-section__events {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Single Event */
+.history-event {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding: var(--space-xs) var(--space-md);
+  margin: 0 calc(-1 * var(--space-md));
+  border-radius: var(--radius-md);
+  background: transparent;
+  transition: background-color var(--transition-slow);
+}
+
+.history-event:hover {
+  background: var(--bg-surface);
+}
+
+.history-event__month {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  font-weight: var(--font-weight-bold);
+  min-width: 36px;
+  flex-shrink: 0;
+}
+
+.history-event__title {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  transition: color var(--transition-slow);
+}
+
+.history-event:hover .history-event__title {
+  color: var(--text-primary);
+}
+
+/* === Active State === */
+.history-section.active .history-section__marker-year {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.history-section.active .history-section__marker::after {
+  background: var(--text-primary);
+}
+
+.history-section.active .history-section__year {
+  opacity: 1;
+}
+
+/* === Responsive: Tablet === */
+@media (max-width: 1024px) {
+  .history-section {
+    grid-template-columns: 72px clamp(80px, 14vw, 140px) 1fr;
+    gap: var(--space-md);
+  }
+
+  .history-section__year {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+}
+
+/* === Responsive: Mobile === */
+@media (max-width: 768px) {
+  .history-timeline::before {
+    display: none;
+  }
+
+  .history-section {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    padding: var(--space-xl) 0;
+  }
+
+  .history-section__marker {
+    display: none;
+  }
+
+  .history-section__year {
+    font-size: var(--font-size-3xl);
+    opacity: 1;
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .history-event {
+    padding: var(--space-xs) var(--space-sm);
+    margin: 0 calc(-1 * var(--space-sm));
+  }
+}
