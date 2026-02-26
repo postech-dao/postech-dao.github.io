@@ -8,6 +8,7 @@ import { initComponents } from './modules/components.js';
 import { initMediumFeed } from './modules/medium-feed.js';
 import { initI18n } from './modules/i18n.js';
 import { initHistoryTimeline } from './modules/history-timeline.js';
+import { initArchive } from './modules/archive.js';
 
 /**
  * Set active navigation link based on current page
@@ -55,6 +56,11 @@ async function init() {
   // Initialize History timeline (only on pages with history-timeline)
   if (document.querySelector('.history-timeline')) {
     initHistoryTimeline();
+  }
+
+  // Initialize Contribution Archive (only on pages with archive container)
+  if (document.querySelector('.archive')) {
+    initArchive();
   }
 
   // Initialize 3D hero (only on pages with hero-3d-container)

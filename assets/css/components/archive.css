@@ -274,3 +274,35 @@
     padding: var(--space-sm) var(--space-md);
   }
 }
+
+/* Loading State */
+.archive-loading {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* Error State */
+.archive-error {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.archive-error__retry {
+  margin-top: var(--space-md);
+  padding: 8px 20px;
+  background: var(--bg-surface);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  transition: background var(--transition-base);
+}
+
+.archive-error__retry:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
