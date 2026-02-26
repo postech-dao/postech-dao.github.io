@@ -204,7 +204,6 @@ function renderEntry(entry) {
 function renderArchive(eras) {
   return eras
     .map((era, idx) => {
-      const meta = ERA_META[era.name] || { desc: '' };
       const openAttr = idx === 0 ? ' open' : '';
       const count = era.entries.length;
       const countText = `${count} contributor${count !== 1 ? 's' : ''}`;
@@ -215,7 +214,6 @@ function renderArchive(eras) {
             <details class="archive-era"${openAttr}>
               <summary>
                 <span class="archive-era__name">${escapeHtml(era.name)}</span>
-                <span class="archive-era__desc">${escapeHtml(meta.desc)}</span>
                 <span class="archive-era__count">${countText}</span>
                 <svg class="archive-era__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
               </summary>
