@@ -1,28 +1,7 @@
 /**
  * Medium Feed Module
- * Fetches and displays posts from Medium RSS feed
+ * Loads pre-built Medium posts from medium.json and renders them.
  */
-
-const MEDIUM_FEED_URL = 'https://medium.com/feed/postech-dao';
-
-// Multiple CORS proxy options for fallback
-const CORS_PROXIES = [
-  {
-    name: 'corsproxy.io',
-    buildUrl: (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
-    parseResponse: async (res) => res.text()
-  },
-  {
-    name: 'allorigins',
-    buildUrl: (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-    parseResponse: async (res) => res.text()
-  },
-  {
-    name: 'cors-anywhere-alt',
-    buildUrl: (url) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
-    parseResponse: async (res) => res.text()
-  }
-];
 
 let mediumPostsCache = [];
 const MAX_LIST_POSTS = 3; // Number of smaller posts to show on the right
@@ -34,37 +13,8 @@ export function initMediumFeed() {
   loadMediumPosts();
 }
 
-
 /**
- * Try fetching RSS through multiple proxy services
- */
-async function fetchWithProxy(feedUrl) {
-  for (const proxy of CORS_PROXIES) {
-    try {
-      const url = proxy.buildUrl(feedUrl);
-      console.log(`Trying ${proxy.name}...`);
-
-      const res = await fetch(url);
-      if (!res.ok) {
-        throw new Error(`${proxy.name} returned ${res.status}`);
-      }
-
-      const rssString = await proxy.parseResponse(res);
-      if (rssString && rssString.includes('<item>')) {
-        console.log(`Success with ${proxy.name}`);
-        return rssString;
-      }
-      throw new Error(`${proxy.name} returned invalid RSS`);
-    } catch (err) {
-      console.warn(`${proxy.name} failed:`, err.message);
-      continue;
-    }
-  }
-  throw new Error('All CORS proxies failed');
-}
-
-/**
- * Load Medium posts from RSS feed
+ * Load Medium posts from pre-built JSON
  */
 async function loadMediumPosts() {
   const featuredContainer = document.getElementById('medium-featured');
@@ -76,8 +26,10 @@ async function loadMediumPosts() {
   listContainer.innerHTML = '';
 
   try {
-    const rssString = await fetchWithProxy(MEDIUM_FEED_URL);
-    const posts = parseMediumRss(rssString);
+    const response = await fetch('assets/data/medium.json');
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+    const { posts } = await response.json();
 
     if (!Array.isArray(posts) || posts.length === 0) {
       featuredContainer.innerHTML = '<p class="empty">No posts found.</p>';
@@ -90,84 +42,6 @@ async function loadMediumPosts() {
     console.error('Medium feed error:', err);
     featuredContainer.innerHTML = '<p class="error">Failed to load Medium posts.</p>';
   }
-}
-
-/**
- * Parse Medium RSS XML string
- */
-function parseMediumRss(rssString) {
-  const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(rssString, 'application/xml');
-
-  const items = Array.from(xmlDoc.querySelectorAll('item'));
-
-  const posts = items.map((item) => {
-    const title = item.querySelector('title')?.textContent || '';
-    const link = item.querySelector('link')?.textContent || '';
-    const guid = item.querySelector('guid')?.textContent || link;
-    const pubDate = item.querySelector('pubDate')?.textContent || '';
-    const description = item.querySelector('description')?.textContent || '';
-
-    // Medium uses content:encoded for full HTML content with images
-    const contentEncoded = item.getElementsByTagName('content:encoded')[0]?.textContent || '';
-    const creator = item.getElementsByTagName('dc:creator')[0]?.textContent || '';
-
-    const publishedAt = toIsoDate(pubDate);
-    const summary = buildSummaryFromDescription(description);
-
-    // Try to get thumbnail from content:encoded first, then fall back to description
-    const thumbnail = extractThumbnailFromDescription(contentEncoded) ||
-                      extractThumbnailFromDescription(description);
-
-    return {
-      id: guid,
-      title,
-      author: creator,
-      url: link,
-      summary,
-      publishedAt,
-      thumbnail,
-    };
-  });
-
-  // Sort by newest first
-  posts.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
-
-  return posts;
-}
-
-/**
- * Convert pubDate string to ISO date
- */
-function toIsoDate(pubDate) {
-  if (!pubDate) return '';
-  const d = new Date(pubDate);
-  if (Number.isNaN(d.getTime())) return '';
-  return d.toISOString();
-}
-
-/**
- * Build summary text from HTML description
- */
-function buildSummaryFromDescription(htmlString, maxLength = 180) {
-  if (!htmlString) return '';
-  const temp = document.createElement('div');
-  temp.innerHTML = htmlString;
-  const text = (temp.textContent || '').trim();
-
-  if (text.length <= maxLength) return text;
-  return text.slice(0, maxLength).trim() + '...';
-}
-
-/**
- * Extract thumbnail image from HTML description
- */
-function extractThumbnailFromDescription(htmlString) {
-  if (!htmlString) return null;
-  const temp = document.createElement('div');
-  temp.innerHTML = htmlString;
-  const img = temp.querySelector('img');
-  return img ? img.getAttribute('src') : null;
 }
 
 /**
@@ -271,11 +145,11 @@ function formatDate(isoString) {
   if (!isoString) return '';
   const d = new Date(isoString);
   if (Number.isNaN(d.getTime())) return '';
-  
+
   return d.toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
-    year: 'numeric'
+    year: 'numeric',
   });
 }
 
@@ -284,8 +158,5 @@ function formatDate(isoString) {
  */
 function escapeHtml(str) {
   if (!str) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }

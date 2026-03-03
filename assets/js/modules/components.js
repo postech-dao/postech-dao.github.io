@@ -29,7 +29,7 @@ function setActiveNav() {
   const pageName = currentPage.replace('.html', '');
 
   // Set active state on nav group titles
-  document.querySelectorAll('.nav-group__title--link[data-page]').forEach(link => {
+  document.querySelectorAll('.nav-group__title--link[data-page]').forEach((link) => {
     if (link.dataset.page === pageName) {
       link.classList.add('active');
     }
@@ -77,9 +77,5 @@ export async function initCTAComponent() {
  * Initialize all components
  */
 export async function initComponents() {
-  await Promise.all([
-    initSidebarComponent(),
-    initCTAComponent(),
-    initFooterComponent()
-  ]);
+  await Promise.all([initSidebarComponent(), initCTAComponent(), initFooterComponent()]);
 }

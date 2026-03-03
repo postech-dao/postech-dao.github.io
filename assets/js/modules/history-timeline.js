@@ -15,10 +15,10 @@ export function initHistoryTimeline() {
     if (year === activeYear) return;
     activeYear = year;
 
-    sections.forEach((s) => s.classList.remove('active'));
-    const target = document.querySelector(
-      `.history-section[data-year="${year}"]`
-    );
+    for (const s of sections) {
+      s.classList.remove('active');
+    }
+    const target = document.querySelector(`.history-section[data-year="${year}"]`);
     if (target) target.classList.add('active');
   }
 
