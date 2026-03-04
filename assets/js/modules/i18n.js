@@ -10,16 +10,14 @@ export async function initI18n() {
   // Get saved language or default to Korean
   const savedLang = localStorage.getItem('language') || 'ko';
 
-  await window.i18next
-    .use(window.i18nextHttpBackend)
-    .init({
-      lng: savedLang,
-      fallbackLng: 'ko',
-      debug: false,
-      backend: {
-        loadPath: '/locales/{{lng}}/translation.json'
-      }
-    });
+  await window.i18next.use(window.i18nextHttpBackend).init({
+    lng: savedLang,
+    fallbackLng: 'ko',
+    debug: false,
+    backend: {
+      loadPath: '/locales/{{lng}}/translation.json',
+    },
+  });
 
   // Translate the page
   translatePage();
@@ -31,7 +29,7 @@ export async function initI18n() {
 export function translatePage() {
   const elements = document.querySelectorAll('[data-i18n]');
 
-  elements.forEach(element => {
+  elements.forEach((element) => {
     const key = element.getAttribute('data-i18n');
     const translation = window.i18next.t(key);
 

@@ -1,0 +1,21 @@
+{
+  "name": "postech-dao.github.io",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fetch-data": "node scripts/fetch-data.mjs",
+    "build": "node scripts/build.mjs",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "ci": "biome ci ."
+  },
+  "packageManager": "pnpm@10.30.3",
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.5",
+    "@fontsource/roboto": "^5.2.10",
+    "i18next": "^25.8.13",
+    "i18next-http-backend": "^3.0.2",
+    "three": "^0.183.2"
+  }
+}

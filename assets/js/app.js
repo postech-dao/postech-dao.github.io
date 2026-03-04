@@ -3,12 +3,12 @@
  * Modern JavaScript with ES6 Modules
  */
 
-import { initSidebar } from './modules/sidebar.js';
-import { initComponents } from './modules/components.js';
-import { initMediumFeed } from './modules/medium-feed.js';
-import { initI18n } from './modules/i18n.js';
-import { initHistoryTimeline } from './modules/history-timeline.js';
 import { initArchive } from './modules/archive.js';
+import { initComponents } from './modules/components.js';
+import { initHistoryTimeline } from './modules/history-timeline.js';
+import { initI18n } from './modules/i18n.js';
+import { initMediumFeed } from './modules/medium-feed.js';
+import { initSidebar } from './modules/sidebar.js';
 
 /**
  * Set active navigation link based on current page
@@ -17,7 +17,7 @@ function setActiveNavLink() {
   const currentPath = window.location.pathname;
   const navLinks = document.querySelectorAll('.nav-link');
 
-  navLinks.forEach(link => {
+  navLinks.forEach((link) => {
     const href = link.getAttribute('href');
 
     // Remove active class from all links first
@@ -67,12 +67,12 @@ async function init() {
   if (document.getElementById('hero-3d-container')) {
     // Dynamically import hero-3d module only when needed
     import('./modules/hero-3d.js')
-      .then(module => module.initHero3D())
-      .catch(err => console.error('Failed to load 3D hero:', err));
+      .then((module) => module.initHero3D())
+      .catch((err) => console.error('Failed to load 3D hero:', err));
   }
 
   // Add smooth scroll behavior for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
 
@@ -83,7 +83,7 @@ async function init() {
         if (target) {
           target.scrollIntoView({
             behavior: 'smooth',
-            block: 'start'
+            block: 'start',
           });
         }
       }

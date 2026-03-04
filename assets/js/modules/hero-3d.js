@@ -4,8 +4,8 @@
  */
 
 import * as THREE from 'three';
-import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { STLLoader } from 'three/addons/loaders/STLLoader.js';
 
 /**
  * Initialize 3D viewer in hero section
@@ -26,14 +26,14 @@ export function initHero3D() {
     50,
     container.clientWidth / container.clientHeight,
     0.1,
-    1000
+    1000,
   );
   camera.position.set(0, 0, 100);
 
   // Renderer setup
   const renderer = new THREE.WebGLRenderer({
     alpha: true,
-    antialias: true
+    antialias: true,
   });
   renderer.setSize(container.clientWidth, container.clientHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
@@ -48,12 +48,12 @@ export function initHero3D() {
   directionalLight1.position.set(1, 1, 1);
   scene.add(directionalLight1);
 
-  const directionalLight2 = new THREE.DirectionalLight(0xC80864, 0.4);
+  const directionalLight2 = new THREE.DirectionalLight(0xc80864, 0.4);
   directionalLight2.position.set(-1, -1, -1);
   scene.add(directionalLight2);
 
   // Add subtle point light for glow effect
-  const pointLight = new THREE.PointLight(0xC80864, 0.5, 100);
+  const pointLight = new THREE.PointLight(0xc80864, 0.5, 100);
   pointLight.position.set(0, 0, 50);
   scene.add(pointLight);
 
@@ -69,13 +69,13 @@ export function initHero3D() {
   const loader = new STLLoader();
   loader.load(
     'images/logo/favicon.stl',
-    function (geometry) {
+    (geometry) => {
       // Material with PDAO brand color
       const material = new THREE.MeshPhongMaterial({
-        color: 0xC80864,
+        color: 0xc80864,
         specular: 0x666666,
         shininess: 100,
-        flatShading: false
+        flatShading: false,
       });
 
       const mesh = new THREE.Mesh(geometry, material);
@@ -97,12 +97,12 @@ export function initHero3D() {
 
       console.log('STL model loaded successfully');
     },
-    function (xhr) {
-      console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+    (xhr) => {
+      console.log(`${(xhr.loaded / xhr.total) * 100}% loaded`);
     },
-    function (error) {
+    (error) => {
       console.error('Error loading STL:', error);
-    }
+    },
   );
 
   // Animation loop
