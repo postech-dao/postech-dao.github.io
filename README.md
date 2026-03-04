@@ -11,7 +11,7 @@ pnpm install
 ## Development
 
 ```bash
-pnpm build                    # Build site into dist/
+pnpm build                         # Build site into dist/
 miniserve --index index.html dist  # Serve locally
 ```
 
