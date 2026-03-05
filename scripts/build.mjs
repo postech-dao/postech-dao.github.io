@@ -73,8 +73,12 @@ function copyVendor() {
   mkdirSync(threeVendor, { recursive: true });
 
   cpSync(
-    join(ROOT, 'node_modules', 'three', 'build', 'three.module.js'),
+    join(ROOT, 'node_modules', 'three', 'build', 'three.module.min.js'),
     join(threeVendor, 'three.module.js'),
+  );
+  cpSync(
+    join(ROOT, 'node_modules', 'three', 'build', 'three.core.min.js'),
+    join(threeVendor, 'three.core.min.js'),
   );
 
   // Three.js addons (STLLoader + OrbitControls)
