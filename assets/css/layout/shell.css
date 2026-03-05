@@ -106,24 +106,16 @@ body {
   transform: translateY(-2px);
 }
 
-.social-icon-btn img,
 .social-icon-svg {
   width: 18px;
   height: 18px;
-  object-fit: contain;
   opacity: 0.5;
-  filter: brightness(0) invert(1);
+  fill: white;
   transition: all var(--transition-base);
 }
 
-.social-icon-svg {
-  fill: currentColor;
-}
-
-.social-icon-btn:hover img,
 .social-icon-btn:hover .social-icon-svg {
   opacity: 1;
-  filter: none;
 }
 
 /* Sidebar Search */

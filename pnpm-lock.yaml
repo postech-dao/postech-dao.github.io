@@ -20,6 +20,9 @@ importers:
       i18next-http-backend:
         specifier: ^3.0.2
         version: 3.0.2
+      simple-icons:
+        specifier: ^16.10.0
+        version: 16.10.0
       three:
         specifier: ^0.183.2
         version: 0.183.2
@@ -113,6 +116,10 @@ packages:
       encoding:
         optional: true
 
+  simple-icons@16.10.0:
+    resolution: {integrity: sha512-62kuxaG3pE+cFNerudUtwb9BLmudzayHrlHkvU9gf8Nxcj7VYOm9dh3WNbGaFk60aQtfnRyzViZaouFG2B45kg==}
+    engines: {node: '>=0.12.18'}
+
   three@0.183.2:
     resolution: {integrity: sha512-di3BsL2FEQ1PA7Hcvn4fyJOlxRRgFYBpMTcyOgkwJIaDOdJMebEFPA+t98EvjuljDx4hNulAGwF6KIjtwI5jgQ==}
 
@@ -185,6 +192,8 @@ snapshots:
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
+
+  simple-icons@16.10.0: {}
 
   three@0.183.2: {}
 
