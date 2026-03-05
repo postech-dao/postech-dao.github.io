@@ -14,6 +14,9 @@ importers:
       '@fontsource/roboto':
         specifier: ^5.2.10
         version: 5.2.10
+      '@phosphor-icons/core':
+        specifier: ^2.1.1
+        version: 2.1.1
       i18next:
         specifier: ^25.8.13
         version: 25.8.13
@@ -92,6 +95,9 @@ packages:
 
   '@fontsource/roboto@5.2.10':
     resolution: {integrity: sha512-8HlA5FtSfz//oFSr2eL7GFXAiE7eIkcGOtx7tjsLKq+as702x9+GU7K95iDeWFapHC4M2hv9RrpXKRTGGBI8Zg==}
+
+  '@phosphor-icons/core@2.1.1':
+    resolution: {integrity: sha512-v4ARvrip4qBCImOE5rmPUylOEK4iiED9ZyKjcvzuezqMaiRASCHKcRIuvvxL/twvLpkfnEODCOJp5dM4eZilxQ==}
 
   cross-fetch@4.0.0:
     resolution: {integrity: sha512-e4a5N8lVvuLgAWgnCrLr2PP0YyDOTHa9H/Rj54dirp61qXnNq46m82bRhNqIA5VccJtWBvPTFRV3TtvHUKPB1g==}
@@ -172,6 +178,8 @@ snapshots:
     optional: true
 
   '@fontsource/roboto@5.2.10': {}
+
+  '@phosphor-icons/core@2.1.1': {}
 
   cross-fetch@4.0.0:
     dependencies:
