@@ -36,6 +36,23 @@
   --sidebar-width-tablet: 80px;
   --content-max-width: 1200px;
 
+  /* --- Mobile Dock Geometry --- */
+  --mobile-dock-shell-height: 68px;
+  --mobile-dock-shell-border-width: 1px;
+  --mobile-dock-peer-height: 48px;
+  --mobile-dock-shell-padding-inline: 10px;
+  --mobile-dock-shell-padding-block: calc(
+    (var(--mobile-dock-shell-height) - var(--mobile-dock-peer-height) - (var(--mobile-dock-shell-border-width) * 2)) / 2
+  );
+  --mobile-dock-peer-gap: 12px;
+  --mobile-dock-brand-padding-inline: 20px;
+  --mobile-dock-rail-padding-inline: 4px;
+  --mobile-dock-rail-gap: 2px;
+  --mobile-dock-control-size: 44px;
+  --mobile-dock-control-radius: 999px;
+  --mobile-dock-icon-size: 18px;
+  --mobile-dock-icon-offset-y: 0.5px;
+
   /* --- Border Radius --- */
   --radius-sm: 2px;
   --radius-md: 4px;
