@@ -8,6 +8,7 @@
 
 /* === Layout Styles === */
 @import url('./layout/shell.css');
+@import url('./layout/mobile-dock.css');
 @import url('./layout/footer.css');
 
 /* === Component Styles === */
@@ -17,6 +18,7 @@
 @import url('./components/hero.css');
 @import url('./components/history.css');
 @import url('./components/archive.css');
+@import url('./components/profile.css');
 
 /* === Utility Classes === */
 

@@ -193,11 +193,15 @@ function parseMediumRss(xml) {
 // Main
 // ---------------------------------------------------------------------------
 
+async function fetchTextOrThrow(url, label) {
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`${label} HTTP ${res.status}`);
+  return res.text();
+}
+
 async function fetchArchive() {
   console.log('Fetching Google Sheets CSV...');
-  const res = await fetch(SHEET_CSV_URL);
-  if (!res.ok) throw new Error(`Google Sheets HTTP ${res.status}`);
-  const csv = await res.text();
+  const csv = await fetchTextOrThrow(SHEET_CSV_URL, 'Google Sheets');
   const rows = parseCSV(csv);
   if (!rows.length) throw new Error('No data parsed from CSV');
   const eras = transformData(rows);
@@ -206,9 +210,7 @@ async function fetchArchive() {
 
 async function fetchMedium() {
   console.log('Fetching Medium RSS...');
-  const res = await fetch(MEDIUM_FEED_URL);
-  if (!res.ok) throw new Error(`Medium RSS HTTP ${res.status}`);
-  const xml = await res.text();
+  const xml = await fetchTextOrThrow(MEDIUM_FEED_URL, 'Medium RSS');
   const posts = parseMediumRss(xml);
   if (!posts.length) console.warn('Warning: no Medium posts parsed');
   return posts;

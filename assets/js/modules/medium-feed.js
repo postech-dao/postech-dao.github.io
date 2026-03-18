@@ -3,6 +3,8 @@
  * Loads pre-built Medium posts from medium.json and renders them.
  */
 
+import { escapeHtml } from './escape-html.js';
+
 let mediumPostsCache = [];
 const MAX_LIST_POSTS = 3; // Number of smaller posts to show on the right
 
@@ -151,12 +153,4 @@ function formatDate(isoString) {
     day: 'numeric',
     year: 'numeric',
   });
-}
-
-/**
- * Escape HTML characters to prevent XSS
- */
-function escapeHtml(str) {
-  if (!str) return '';
-  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }

@@ -12,6 +12,10 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.hero--flush {
+  margin-bottom: 0;
+}
+
 .hero__inner {
   display: flex;
   align-items: center;
@@ -93,6 +97,12 @@
   width: 100%;
   max-width: 600px;
   margin-top: var(--space-lg);
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
 }
 
 /* Hero with Image Variant */

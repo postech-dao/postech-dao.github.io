@@ -14,18 +14,12 @@ importers:
       '@fontsource/roboto':
         specifier: ^5.2.10
         version: 5.2.10
-      '@phosphor-icons/core':
-        specifier: ^2.1.1
-        version: 2.1.1
       i18next:
         specifier: ^25.8.13
         version: 25.8.13
       i18next-http-backend:
         specifier: ^3.0.2
         version: 3.0.2
-      simple-icons:
-        specifier: ^16.10.0
-        version: 16.10.0
       three:
         specifier: ^0.183.2
         version: 0.183.2
@@ -96,9 +90,6 @@ packages:
   '@fontsource/roboto@5.2.10':
     resolution: {integrity: sha512-8HlA5FtSfz//oFSr2eL7GFXAiE7eIkcGOtx7tjsLKq+as702x9+GU7K95iDeWFapHC4M2hv9RrpXKRTGGBI8Zg==}
 
-  '@phosphor-icons/core@2.1.1':
-    resolution: {integrity: sha512-v4ARvrip4qBCImOE5rmPUylOEK4iiED9ZyKjcvzuezqMaiRASCHKcRIuvvxL/twvLpkfnEODCOJp5dM4eZilxQ==}
-
   cross-fetch@4.0.0:
     resolution: {integrity: sha512-e4a5N8lVvuLgAWgnCrLr2PP0YyDOTHa9H/Rj54dirp61qXnNq46m82bRhNqIA5VccJtWBvPTFRV3TtvHUKPB1g==}
 
@@ -121,10 +112,6 @@ packages:
     peerDependenciesMeta:
       encoding:
         optional: true
-
-  simple-icons@16.10.0:
-    resolution: {integrity: sha512-62kuxaG3pE+cFNerudUtwb9BLmudzayHrlHkvU9gf8Nxcj7VYOm9dh3WNbGaFk60aQtfnRyzViZaouFG2B45kg==}
-    engines: {node: '>=0.12.18'}
 
   three@0.183.2:
     resolution: {integrity: sha512-di3BsL2FEQ1PA7Hcvn4fyJOlxRRgFYBpMTcyOgkwJIaDOdJMebEFPA+t98EvjuljDx4hNulAGwF6KIjtwI5jgQ==}
@@ -179,8 +166,6 @@ snapshots:
 
   '@fontsource/roboto@5.2.10': {}
 
-  '@phosphor-icons/core@2.1.1': {}
-
   cross-fetch@4.0.0:
     dependencies:
       node-fetch: 2.7.0
@@ -200,8 +185,6 @@ snapshots:
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
-
-  simple-icons@16.10.0: {}
 
   three@0.183.2: {}
 

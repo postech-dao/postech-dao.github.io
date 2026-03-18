@@ -14,10 +14,8 @@
   "devDependencies": {
     "@biomejs/biome": "^2.4.5",
     "@fontsource/roboto": "^5.2.10",
-    "@phosphor-icons/core": "^2.1.1",
     "i18next": "^25.8.13",
     "i18next-http-backend": "^3.0.2",
-    "simple-icons": "^16.10.0",
     "three": "^0.183.2"
   }
 }

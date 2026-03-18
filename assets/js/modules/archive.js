@@ -3,6 +3,8 @@
  * Loads pre-built contribution data from archive.json and renders the archive.
  */
 
+import { escapeHtml } from './escape-html.js';
+
 /** Role string → CSS class + display label */
 const ROLE_BADGE_MAP = {
   dev: { css: 'dev', label: 'Dev' },
@@ -19,19 +21,6 @@ const ROLE_BADGE_MAP = {
   study: { css: 'study', label: 'Study' },
   director: { css: 'director', label: 'Director' },
 };
-
-// ---------------------------------------------------------------------------
-// HTML Rendering (all dynamic values are escaped via escapeHtml)
-// ---------------------------------------------------------------------------
-
-function escapeHtml(str) {
-  if (!str) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
 
 function renderRoleBadges(roles) {
   return roles
