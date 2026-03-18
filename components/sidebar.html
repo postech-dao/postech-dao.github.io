@@ -55,60 +55,83 @@
 
   <!-- Navigation -->
   <nav class="sidebar__nav">
-    <!-- About Group -->
-    <div class="nav-group">
-      <a href="about.html" class="nav-group__title nav-group__title--link" data-page="about"
-        data-i18n="nav.about">About</a>
-      <ul class="nav-group__list">
-        <li><a href="about.html#history" class="nav-link">
-            <span class="nav-text" data-i18n="nav.history">History</span>
-          </a></li>
-        <li><a href="https://github.com/postech-dao/pdao/blob/main/README.md" target="_blank"
-            class="nav-link nav-link--external">
-            <span class="nav-text" data-i18n="nav.ir">IR</span>
-            <svg class="nav-external-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+    <div class="sidebar__nav-rail">
+      <!-- About Group -->
+      <div class="nav-group">
+        <a href="about.html" class="nav-group__title nav-group__title--link" data-page="about">
+          <span class="nav-group__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="8.25" />
+              <path d="M12 10.25V15.25" />
+              <path d="M12 8.35H12.01" />
             </svg>
-          </a></li>
-      </ul>
-    </div>
+          </span>
+          <span class="nav-group__label" data-i18n="nav.about">About</span>
+        </a>
+        <ul class="nav-group__list">
+          <li><a href="about.html#history" class="nav-link">
+              <span class="nav-text" data-i18n="nav.history">History</span>
+            </a></li>
+          <li><a href="https://github.com/postech-dao/pdao/blob/main/README.md" target="_blank"
+              class="nav-link nav-link--external">
+              <span class="nav-text" data-i18n="nav.ir">IR</span>
+              <svg class="nav-external-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a></li>
+        </ul>
+      </div>
 
+      <!-- Assets Group -->
+      <div class="nav-group">
+        <a href="assets.html" class="nav-group__title nav-group__title--link" data-page="assets">
+          <span class="nav-group__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="4.25" y="5.25" width="15.5" height="13.5" rx="3" />
+              <circle cx="9" cy="10" r="1.5" />
+              <path d="M7 16L11.25 11.75C11.6 11.4 12.16 11.38 12.54 11.71L15.1 13.94C15.46 14.26 15.99 14.25 16.35 13.92L17 13.33L19.75 16" />
+            </svg>
+          </span>
+          <span class="nav-group__label" data-i18n="nav.assets">Assets</span>
+        </a>
+        <ul class="nav-group__list">
+          <li><a href="assets.html#poppin" class="nav-link">
+              <span class="nav-text" data-i18n="nav.poppin">Poppin</span>
+            </a></li>
+          <li><a href="assets.html#logo" class="nav-link">
+              <span class="nav-text" data-i18n="nav.logo">Logo</span>
+            </a></li>
+        </ul>
+      </div>
 
-
-    <!-- Assets Group -->
-    <div class="nav-group">
-      <a href="assets.html" class="nav-group__title nav-group__title--link" data-page="assets"
-        data-i18n="nav.assets">Assets</a>
-      <ul class="nav-group__list">
-        <li><a href="assets.html#poppin" class="nav-link">
-            <span class="nav-text" data-i18n="nav.poppin">Poppin</span>
-          </a></li>
-        <li><a href="assets.html#logo" class="nav-link">
-            <span class="nav-text" data-i18n="nav.logo">Logo</span>
-          </a></li>
-      </ul>
-    </div>
-
-    <!-- Profile Group -->
-    <div class="nav-group">
-      <a href="profile.html" class="nav-group__title nav-group__title--link" data-page="profile"
-        data-i18n="nav.profile">Profile</a>
-      <ul class="nav-group__list">
-        <li><a href="profile.html#founder" class="nav-link">
-            <span class="nav-text" data-i18n="nav.founder">Founder</span>
-          </a></li>
-        <li><a href="profile.html#organizer" class="nav-link">
-            <span class="nav-text" data-i18n="nav.organizer">Organizer / Director</span>
-          </a></li>
-        <li><a href="profile.html#contributor" class="nav-link">
-            <span class="nav-text" data-i18n="nav.contributor">Contributor</span>
-          </a></li>
-        <li><a href="profile.html#contribution-archive" class="nav-link">
-            <span class="nav-text" data-i18n="nav.archive">Contribution Archive</span>
-          </a></li>
-      </ul>
+      <!-- Profile Group -->
+      <div class="nav-group">
+        <a href="profile.html" class="nav-group__title nav-group__title--link" data-page="profile">
+          <span class="nav-group__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M15.5 8.25A3.5 3.5 0 1 1 8.5 8.25A3.5 3.5 0 0 1 15.5 8.25Z" />
+              <path d="M5.5 18C6.57 15.6 9.02 14 12 14C14.98 14 17.43 15.6 18.5 18" />
+            </svg>
+          </span>
+          <span class="nav-group__label" data-i18n="nav.profile">Profile</span>
+        </a>
+        <ul class="nav-group__list">
+          <li><a href="profile.html#founder" class="nav-link">
+              <span class="nav-text" data-i18n="nav.founder">Founder</span>
+            </a></li>
+          <li><a href="profile.html#organizer" class="nav-link">
+              <span class="nav-text" data-i18n="nav.organizer">Organizer / Director</span>
+            </a></li>
+          <li><a href="profile.html#contributor" class="nav-link">
+              <span class="nav-text" data-i18n="nav.contributor">Contributor</span>
+            </a></li>
+          <li><a href="profile.html#contribution-archive" class="nav-link">
+              <span class="nav-text" data-i18n="nav.archive">Contribution Archive</span>
+            </a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
