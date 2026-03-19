@@ -1,0 +1,32 @@
+<section class="section cta-section">
+  <div class="container">
+    <div class="article-featured cta-section__panel">
+      <div class="article-featured__content cta-section__content">
+        <h2 class="article-featured__title" data-i18n="sections.joinCommunity">PDAO에 놀러오세요!</h2>
+        <p class="article-featured__description cta-section__description" data-i18n="sections.communitySubtitle">
+          블록체인 생태계에 관심있는 사람 누구든 환영합니다.
+        </p>
+        <div class="btn-group">
+          <a
+            href="https://discord.gg/tf9v5hHpzW"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--primary"
+            data-i18n="buttons.discord"
+          >
+            Discord
+          </a>
+          <a
+            href="https://www.linkedin.com/company/pdao/posts/?feedView=all"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--secondary"
+            data-i18n="buttons.viewGithub"
+          >
+            링크드인
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

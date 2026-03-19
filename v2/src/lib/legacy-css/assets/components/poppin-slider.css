@@ -1,0 +1,174 @@
+/* Poppin Slider Component */
+.poppin-section {
+    padding: 0 0 var(--space-3xl) 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.poppin-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    padding: 0 var(--space-lg);
+}
+
+.poppin-title {
+    font-size: 64px;
+    font-weight: var(--font-weight-black);
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.poppin-subtitle {
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Slider Container */
+.poppin-slider {
+    display: flex;
+    gap: var(--space-xl);
+    padding: var(--space-3xl) var(--space-lg);
+    overflow-x: auto;
+    /* scroll-snap-type: x mandatory; - Removed for smooth auto-scroll */
+    scrollbar-width: none;
+    /* Firefox */
+    /* IE/Edge */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    scroll-behavior: smooth;
+    /* Add padding to allow cards to pop out without being cut off */
+    padding-top: 80px;
+}
+
+.poppin-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Card Design */
+.poppin-card {
+    flex: 0 0 300px;
+    height: 400px;
+    background: var(--bg-primary);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    position: relative;
+    transition: all 0.4s ease;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-lg);
+    cursor: pointer;
+    overflow: visible;
+}
+
+/* Glassmorphism gradient overlay */
+.poppin-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-md);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+.poppin-card:hover {
+    transform: translateY(-5px);
+    background: var(--bg-secondary);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Character Image */
+.poppin-card__image {
+    position: absolute;
+    top: -40px;
+    /* Pop out effect */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 260px;
+    object-fit: contain;
+    z-index: 2;
+    transition: transform 0.4s ease;
+}
+
+.poppin-card:hover .poppin-card__image {
+    transform: translateX(-50%) translateY(-10px);
+}
+
+/* Card Content */
+.poppin-card__content {
+    position: relative;
+    z-index: 3;
+    margin-bottom: var(--space-sm);
+}
+
+.poppin-card__title {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: #fff;
+    margin: 0 0 var(--space-xs) 0;
+}
+
+.poppin-card__desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Badge/Action */
+.poppin-card__action {
+    position: absolute;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    z-index: 3;
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.poppin-card:hover .poppin-card__action {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Background Decoration */
+.poppin-bg-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: var(--brand-main);
+    filter: blur(150px);
+    opacity: 0.15;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Animation for auto-scroll hint */
+@keyframes scrollHint {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+}

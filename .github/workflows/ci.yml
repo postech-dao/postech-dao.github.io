@@ -18,3 +18,23 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm run ci
+
+  v2-verify:
+    runs-on: ubuntu-latest
+    env:
+      PUBLIC_BASE_PATH: ${{ vars.PUBLIC_BASE_PATH || '' }}
+    defaults:
+      run:
+        working-directory: v2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: v2/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run check
+      - run: pnpm test
+      - run: pnpm run build

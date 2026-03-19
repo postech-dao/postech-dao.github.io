@@ -1,0 +1,71 @@
+/* Profile Page Cleanup */
+
+.profile-icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.profile-section {
+  padding: var(--space-md) 0;
+}
+
+.card__media--profile {
+  display: flex;
+  align-items: center;
+  min-width: 180px;
+}
+
+.card__image-wrapper--profile {
+  width: 180px;
+  height: 180px;
+  min-width: 180px;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 0;
+}
+
+.card--horizontal .card__image-wrapper--profile {
+  width: 180px;
+  min-width: 180px;
+  margin-bottom: 0;
+}
+
+.card__header--profile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.card__title--inline {
+  margin: 0;
+}
+
+.card__socials--inline {
+  margin: 0;
+}
+
+.card__description--compact {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.profile-archive-intro {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  margin-top: calc(-1 * var(--space-lg));
+  margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .card__media--profile {
+    min-width: 0;
+  }
+
+  .card--horizontal .card__image-wrapper--profile {
+    width: 100%;
+    min-width: 100%;
+  }
+}

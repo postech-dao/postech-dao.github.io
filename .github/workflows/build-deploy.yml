@@ -16,12 +16,18 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+env:
+  PUBLIC_BASE_PATH: ${{ vars.PUBLIC_BASE_PATH || '' }}
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    defaults:
+      run:
+        working-directory: v2
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -29,11 +35,14 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
+          cache-dependency-path: v2/pnpm-lock.yaml
       - run: pnpm install --frozen-lockfile
+      - run: pnpm run check
+      - run: pnpm test
       - run: pnpm build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: v2/build
       - id: deployment
         uses: actions/deploy-pages@v4
