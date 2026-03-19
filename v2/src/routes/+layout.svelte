@@ -18,7 +18,7 @@
   async function syncUi(): Promise<void> {
     await tick();
     translatePage();
-    setActiveNav(window.location.pathname);
+    setActiveNav(window.location.pathname, window.location.hash);
   }
 
   onMount(async () => {

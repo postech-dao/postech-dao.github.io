@@ -5,20 +5,15 @@ const ROOT = join(import.meta.dirname, '..', '..');
 const APP = join(import.meta.dirname, '..');
 const STATIC = join(APP, 'static');
 
-function resetDir(path: string): void {
-  rmSync(path, { recursive: true, force: true });
-  mkdirSync(path, { recursive: true });
-}
-
-mkdirSync(STATIC, { recursive: true });
-resetDir(join(STATIC, 'images'));
-resetDir(join(STATIC, 'locales'));
+rmSync(STATIC, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
+mkdirSync(join(STATIC, 'images'), { recursive: true });
+mkdirSync(join(STATIC, 'locales'), { recursive: true });
 mkdirSync(join(STATIC, 'assets', 'data'), { recursive: true });
 
-cpSync(join(ROOT, 'images'), join(STATIC, 'images'), { recursive: true });
-cpSync(join(ROOT, 'locales'), join(STATIC, 'locales'), { recursive: true });
+cpSync(join(ROOT, 'images'), join(STATIC, 'images'), { recursive: true, force: true });
+cpSync(join(ROOT, 'locales'), join(STATIC, 'locales'), { recursive: true, force: true });
 
 const banner = join(ROOT, 'banner.png');
 if (existsSync(banner)) {
-  cpSync(banner, join(STATIC, 'banner.png'));
+  cpSync(banner, join(STATIC, 'banner.png'), { force: true });
 }
