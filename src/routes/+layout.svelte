@@ -25,18 +25,20 @@
     cleanupScrollAwareNav = initScrollAwareNav(window.location.pathname, window.location.hash);
   }
 
-  onMount(async () => {
-    await initI18n();
-    initSidebar();
-    await syncUi();
+  onMount(() => {
+    void (async () => {
+      await initI18n();
+      initSidebar();
+      await syncUi();
+    })();
 
     return () => {
       cleanupScrollAwareNav();
     };
   });
 
-  afterNavigate(async () => {
-    await syncUi();
+  afterNavigate(() => {
+    void syncUi();
   });
 </script>
 
