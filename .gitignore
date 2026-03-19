@@ -1,4 +1,11 @@
 .DS_Store
 .omc
+.omx
+.pnpm-store/
 node_modules/
+.svelte-kit/
+build/
 dist/
+v2/build/
+v2/.svelte-kit/
+v2/node_modules/

@@ -2,20 +2,40 @@
   "name": "postech-dao.github.io",
   "private": true,
   "type": "module",
-  "scripts": {
-    "fetch-data": "node scripts/fetch-data.mjs",
-    "build": "node scripts/build.mjs",
-    "lint": "biome check .",
-    "lint:fix": "biome check --write .",
-    "format": "biome format --write .",
-    "ci": "biome ci ."
-  },
   "packageManager": "pnpm@10.30.3",
+  "scripts": {
+    "sync": "svelte-kit sync",
+    "prepare-static": "node --experimental-strip-types scripts/prepare-static.ts",
+    "prepare-data": "node --experimental-strip-types scripts/fetch-data.ts",
+    "predev": "pnpm run sync && pnpm run prepare-static && pnpm run prepare-data",
+    "precheck": "pnpm run sync && pnpm run prepare-static && pnpm run prepare-data",
+    "pretest": "pnpm run sync && pnpm run prepare-static && pnpm run prepare-data",
+    "prebuild": "pnpm run sync && pnpm run prepare-static && pnpm run prepare-data",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --fail-on-warnings",
+    "test": "vitest run",
+    "lint": "biome check biome.json package.json scripts src .github",
+    "lint:fix": "biome check --write biome.json package.json scripts src .github",
+    "format": "biome format --write biome.json package.json scripts src .github",
+    "ci": "biome ci biome.json package.json scripts src .github"
+  },
   "devDependencies": {
     "@biomejs/biome": "^2.4.5",
     "@fontsource/roboto": "^5.2.10",
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "^2.55.0",
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "@types/node": "^24.5.2",
+    "@types/three": "^0.183.1",
     "i18next": "^25.8.13",
     "i18next-http-backend": "^3.0.2",
-    "three": "^0.183.2"
+    "svelte": "^5.54.0",
+    "svelte-check": "^4.4.5",
+    "three": "^0.183.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vitest": "^4.1.0"
   }
 }
