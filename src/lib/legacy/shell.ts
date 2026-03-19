@@ -70,7 +70,8 @@ export function setActiveNav(
   activeHash: string = currentHash,
 ): void {
   const normalized = normalizePath(currentPath);
-  const pageName = normalized === '/' ? 'index' : normalized.split('/').filter(Boolean)[0] || 'index';
+  const pageName =
+    normalized === '/' ? 'index' : normalized.split('/').filter(Boolean)[0] || 'index';
 
   document.querySelectorAll<HTMLElement>('.nav-group__title--link[data-page]').forEach((link) => {
     link.classList.toggle('active', link.dataset.page === pageName);

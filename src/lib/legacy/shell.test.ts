@@ -3,8 +3,12 @@ import { isSidebarAnchorActive, pickActiveSectionHash } from './shell';
 
 describe('isSidebarAnchorActive', () => {
   it('does not activate all profile anchors when there is no hash', () => {
-    expect(isSidebarAnchorActive('/profile', '', 'https://example.com/profile/#founder')).toBe(false);
-    expect(isSidebarAnchorActive('/profile', '', 'https://example.com/profile/#organizer')).toBe(false);
+    expect(isSidebarAnchorActive('/profile', '', 'https://example.com/profile/#founder')).toBe(
+      false,
+    );
+    expect(isSidebarAnchorActive('/profile', '', 'https://example.com/profile/#organizer')).toBe(
+      false,
+    );
   });
 
   it('activates only the matching anchor when hash exists', () => {
