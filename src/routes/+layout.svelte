@@ -13,18 +13,26 @@
   import Footer from '$lib/components/Footer.svelte';
   import { initI18n, translatePage } from '$lib/legacy/i18n';
   import { initSidebar } from '$lib/legacy/sidebar';
-  import { setActiveNav } from '$lib/legacy/shell';
+  import { initScrollAwareNav, setActiveNav } from '$lib/legacy/shell';
+
+  let cleanupScrollAwareNav = () => {};
 
   async function syncUi(): Promise<void> {
     await tick();
     translatePage();
+    cleanupScrollAwareNav();
     setActiveNav(window.location.pathname, window.location.hash);
+    cleanupScrollAwareNav = initScrollAwareNav(window.location.pathname, window.location.hash);
   }
 
   onMount(async () => {
     await initI18n();
     initSidebar();
     await syncUi();
+
+    return () => {
+      cleanupScrollAwareNav();
+    };
   });
 
   afterNavigate(async () => {
