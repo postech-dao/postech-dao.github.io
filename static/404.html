@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Page not found</title>
+<script>
+  var p = location.pathname;
+  if (p.endsWith('.html')) {
+    window.location.replace(p.replace(/\.html$/, '/') + location.search + location.hash);
+  }
+</script>
+<noscript><p>Page not found. <a href="/">Go to homepage</a></p></noscript>
