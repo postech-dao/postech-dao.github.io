@@ -13,7 +13,7 @@
     "discord": "Discord",
     "github": "GitHub",
     "medium": "Medium",
-    "youtube": "Youtube",
+    "youtube": "YouTube",
     "instagram": "Instagram",
     "founder": "Founder",
     "organizer": "Organizer / Director",
@@ -73,7 +73,7 @@
   },
   "buttons": {
     "joinDiscord": "Check the latest PDAO news now",
-    "viewGithub": "LinkedIn",
+    "viewLinkedIn": "LinkedIn",
     "discord": "Discord"
   },
   "about": {
@@ -108,7 +108,7 @@
     "applyNow": "Apply Now"
   },
   "assets": {
-    "brandAssets": "POPPINS & LOGO",
+    "brandAssets": "POPPIN & LOGO",
     "downloadAssets": "ASSETS",
     "assetsDesc": "Introducing PDAO's Mascot, POPPIN!",
     "poppin": "Poppin",

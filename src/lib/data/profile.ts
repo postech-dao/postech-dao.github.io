@@ -64,7 +64,7 @@ export const profileSections: ProfileSectionData[] = [
         bio: [
           '[2025-Present] Director, PDAO',
           '[2025] Learner, Apple Developer Academy @POSTECH',
-          '[2023-2024] Buisness Developer, Streami',
+          '[2023-2024] Business Developer, Streami',
           '[2023] GOPAX Guardians Member, Streami',
           '[2018-2025] B.S. in CSE, Handong Global Univ',
         ],
@@ -91,7 +91,7 @@ export const profileSections: ProfileSectionData[] = [
         bio: [
           '[2025-Present] Director, PDAO',
           '[2025] 3rd prize in 2nd Monad Blitz Seoul',
-          '[2025] 1st Prize in Qwen Base SKYST Hackerthon',
+          '[2025] 1st Prize in Qwen Base SKYST Hackathon',
         ],
       },
     ],
@@ -138,7 +138,7 @@ export const profileSections: ProfileSectionData[] = [
           '[2025-Present] Governance Committee, PDAO',
           '[2025] Software Engineer, Appbuildchat',
           '[2023] Software Engineer, Aribio',
-          '[2021-2022] Software Engineer, Software Engineer',
+          '[2021-2022] Software Engineer',
           '[2020-2026] B.S. in CSE, Handong Global Univ',
         ],
       },
