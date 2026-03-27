@@ -17,17 +17,17 @@
 </script>
 
 <svelte:head>
-  <title>PDAO - Postech DAO</title>
-  <meta name="description" content="Postech Decentralized Autonomous Organization - Unlock Web3 with Clarity" />
+  <title>PDAO - POSTECH DAO</title>
+  <meta name="description" content="POSTECH Decentralized Autonomous Organization - Unlock Web3 with Clarity" />
   <meta name="keywords" content="PDAO, blockchain, DAO, Simperby, POSTECH, Web3" />
-  <meta property="og:title" content="PDAO - Postech DAO" />
+  <meta property="og:title" content="PDAO - POSTECH DAO" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dao.postech.ac.kr/" />
   <meta property="og:image" content="https://dao.postech.ac.kr/banner.png" />
-  <meta property="og:description" content="Postech Decentralized Autonomous Organization" />
+  <meta property="og:description" content="POSTECH Decentralized Autonomous Organization" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="PDAO" />
-  <meta name="twitter:description" content="Postech Decentralized Autonomous Organization" />
+  <meta name="twitter:description" content="POSTECH Decentralized Autonomous Organization" />
 </svelte:head>
 
 <main class="main-content">
@@ -36,7 +36,7 @@
     titleKey="hero.title"
     subtitleKey="hero.subtitle"
     title="POSTECH-DAO"
-    subtitle="PDAO는 포스텍 기반 비영리 블록체인 오픈소스 재단입니다."
+    subtitle="PDAO는 포스텍 기반 비영리 블록체인 오픈소스 커뮤니티입니다."
   >
     <div class="hero__actions">
       <a href="https://discord.gg/tf9v5hHpzW" target="_blank" class="btn btn--primary" data-i18n="buttons.joinDiscord">

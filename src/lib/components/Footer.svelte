@@ -33,7 +33,7 @@
 
     <div class="footer__bottom">
       <div class="footer__copyright">
-        <span data-i18n="footer.copyright">© 2026 Postech DAO. All rights reserved.</span><br />
+        <span data-i18n="footer.copyright">© 2026 POSTECH DAO. All rights reserved.</span><br />
         <a href="mailto:hi@postech-dao.xyz">hi@postech-dao.xyz</a>
       </div>
     </div>

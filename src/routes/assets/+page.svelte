@@ -21,7 +21,7 @@
     labelKey="assets.brandAssets"
     titleKey="assets.downloadAssets"
     subtitleKey="assets.assetsDesc"
-    label="POPPINS & LOGO"
+    label="POPPIN & LOGO"
     title="ASSETS"
     subtitle="PDAO의 마스코트 POPPIN을 소개합니다!"
     flush={true}

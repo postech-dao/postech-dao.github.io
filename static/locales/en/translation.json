@@ -23,7 +23,7 @@
   "hero": {
     "label": "",
     "title": "POSTECH-DAO",
-    "subtitle": "POSTECH-Oriented Nonprofit Blockchain Opensource Foundation"
+    "subtitle": "POSTECH-Oriented Nonprofit Blockchain Open-Source Community"
   },
   "sections": {
     "insights": "ARTICLES",
@@ -37,7 +37,7 @@
   "simperby": {
     "coreProject": "Core Project",
     "whatIs": "What is Simperby?",
-    "whatIsDesc": "A brand new blockchain engine we're building. Simperby is PDAO's core project, developing an innovative blockchain engine.",
+    "whatIsDesc": "A brand-new blockchain engine we're building. As PDAO's core project, Simperby pushes the boundaries of blockchain infrastructure.",
     "technical": "Technical",
     "howWorks": "How Does Simperby Work?",
     "howWorksDesc": "Governance, P2P Communication, and Consensus. Learn about Simperby's protocol and how it works.",
@@ -45,13 +45,13 @@
     "readProtocol": "Read Protocol",
     "governance": "Governance",
     "governanceTitle": "Decentralized Governance",
-    "governanceDesc": "We implement a democratic system where all participants can participate in decision-making through on-chain governance.",
+    "governanceDesc": "We implement a democratic system where all members can engage in decision-making through on-chain governance.",
     "p2p": "P2P",
     "p2pTitle": "P2P Communication",
     "p2pDesc": "We optimize inter-node communication through efficient P2P network protocols and ensure network scalability.",
     "consensus": "Consensus",
     "consensusTitle": "Consensus Algorithm",
-    "consensusDesc": "We ensure network security and stability through Byzantine Fault Tolerant consensus algorithm.",
+    "consensusDesc": "We ensure network security and stability through a Byzantine Fault Tolerant consensus algorithm.",
     "overview": "Overview",
     "innovativeEngine": "Innovative Blockchain Engine",
     "innovativeEngineDesc": "Simperby is a new blockchain engine being developed by PDAO. With decentralized governance, P2P communication, and consensus algorithms at its core, it provides a more efficient and scalable blockchain solution.",
@@ -79,10 +79,10 @@
   "about": {
     "aboutUs": "WELCOME TO PDAO!",
     "unlockCrypto": "About",
-    "description": "Based on the uniqueness of POSTECH, PDAO leads the spread of crypto-blockchain culture together with community members.",
+    "description": "Rooted in POSTECH's distinctive strengths, PDAO drives the adoption of crypto and blockchain culture alongside its community members.",
     "intro1": "PDAO is a crypto and blockchain community based at POSTECH (Pohang University of Science and Technology).",
-    "intro2": "PDAO started in early 2022 as a crypto community and open-source development group at POSTECH. Based on the identity of 'a DAO that opens DAOs,' we have developed Simperby, a decentralized DAO protocol, and have hosted ourselves through it. We have also contributed to the blockchain industry as a development organization through various hackathon participations and the 2023 Ministry of Science and ICT's open-source contribution project.",
-    "intro3": "As of 2026, PDAO is a community that anyone can freely participate in. Those interested in the blockchain ecosystem can plan and participate in various activities to contribute to this industry and grow their careers.",
+    "intro2": "PDAO started in early 2022 as a crypto community and open-source development group at POSTECH. Based on the identity of 'a DAO that opens DAOs,' we have developed Simperby, a decentralized DAO protocol, and have hosted ourselves through it. We have also contributed to the blockchain industry as a development organization through various hackathon participations and the 2023 Open-Source Contribution Project under Korea's Ministry of Science and ICT.",
+    "intro3": "As of 2026, PDAO is a community that anyone can freely participate in. Those interested in the blockchain ecosystem can join and organize activities that contribute to the industry and advance their careers.",
     "history": "History",
     "links": "Links",
     "xDesc": "Latest news and updates",
@@ -133,6 +133,6 @@
     "founder": "Founder",
     "organizer": "Organizer / Director",
     "contributor": "Contributor",
-    "copyright": "© 2026 Postech DAO. All rights reserved."
+    "copyright": "© 2026 POSTECH DAO. All rights reserved."
   }
 }
