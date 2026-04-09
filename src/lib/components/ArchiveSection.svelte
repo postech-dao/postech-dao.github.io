@@ -55,7 +55,8 @@
   $: totalMatches = filteredEras.reduce((sum, era) => sum + era.entries.length, 0);
 </script>
 
-<section class="section profile-section" id="contribution-archive">
+<section class="section profile-section" id="archive">
+  <div id="contribution-archive" aria-hidden="true"></div>
   <div class="container">
     <div class="section__header">
       <h2 class="section__title section__title--articles">Contribution Archive</h2>

@@ -17,10 +17,10 @@ describe('buildProfileSearchUrl', () => {
   it('adds the trimmed search query to the current url', () => {
     expect(
       buildProfileSearchUrl(
-        new URL('https://dao.postech.ac.kr/profile/#contribution-archive'),
+        new URL('https://dao.postech.ac.kr/profile/#archive'),
         '  Junha Yang  ',
       ),
-    ).toBe('/profile/?search=Junha+Yang#contribution-archive');
+    ).toBe('/profile/?search=Junha+Yang#archive');
   });
 
   it('removes the search query when it is empty', () => {
