@@ -1,0 +1,18 @@
+export const PROFILE_SEARCH_PARAM = 'search';
+
+export function readProfileSearch(url: URL): string {
+  return url.searchParams.get(PROFILE_SEARCH_PARAM) ?? '';
+}
+
+export function buildProfileSearchUrl(url: URL, query: string): string {
+  const nextUrl = new URL(url);
+  const normalizedQuery = query.trim();
+
+  if (normalizedQuery) {
+    nextUrl.searchParams.set(PROFILE_SEARCH_PARAM, normalizedQuery);
+  } else {
+    nextUrl.searchParams.delete(PROFILE_SEARCH_PARAM);
+  }
+
+  return `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`;
+}

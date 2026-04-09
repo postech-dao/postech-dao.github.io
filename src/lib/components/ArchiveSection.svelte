@@ -1,5 +1,9 @@
 <script lang="ts">
+  import { browser } from '$app/environment';
+  import { goto } from '$app/navigation';
+  import { page } from '$app/stores';
   import type { ArchiveEra } from '$lib/types';
+  import { buildProfileSearchUrl, readProfileSearch } from '$lib/utils/profile-search';
 
   export let eras: ArchiveEra[] = [];
 
@@ -20,6 +24,23 @@
   };
 
   let query = '';
+  let syncedQuery = '';
+
+  $: currentUrlQuery = browser ? readProfileSearch($page.url) : '';
+  $: if (currentUrlQuery !== syncedQuery) {
+    syncedQuery = currentUrlQuery;
+    query = currentUrlQuery;
+  }
+
+  $: if (browser && query !== syncedQuery) {
+    void goto(buildProfileSearchUrl($page.url, query), {
+      replaceState: true,
+      keepFocus: true,
+      noScroll: true,
+      invalidateAll: false
+    });
+  }
+
   $: normalizedQuery = query.trim().toLowerCase();
   $: filteredEras = !normalizedQuery
     ? eras
