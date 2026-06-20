@@ -2,7 +2,7 @@
   "name": "postech-dao.github.io",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@10.30.3",
+  "packageManager": "pnpm@11.8.0",
   "scripts": {
     "sync": "svelte-kit sync",
     "prepare-static": "node --experimental-strip-types scripts/prepare-static.ts",
@@ -22,20 +22,20 @@
     "ci": "biome ci biome.json package.json scripts src .github"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.5",
+    "@biomejs/biome": "^2.5.0",
     "@fontsource/roboto": "^5.2.10",
     "@sveltejs/adapter-static": "^3.0.10",
-    "@sveltejs/kit": "^2.55.0",
-    "@sveltejs/vite-plugin-svelte": "^7.0.0",
-    "@types/node": "^25.5.0",
-    "@types/three": "^0.183.1",
-    "i18next": "^25.8.19",
-    "i18next-http-backend": "^3.0.2",
-    "svelte": "^5.54.0",
-    "svelte-check": "^4.4.5",
-    "three": "^0.183.2",
-    "typescript": "^5.9.3",
-    "vite": "^8.0.1",
-    "vitest": "^4.1.0"
+    "@sveltejs/kit": "^2.66.0",
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "@types/node": "^26.0.0",
+    "@types/three": "^0.184.1",
+    "i18next": "^26.3.1",
+    "i18next-http-backend": "^4.0.0",
+    "svelte": "^5.56.3",
+    "svelte-check": "^4.6.0",
+    "three": "^0.184.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16",
+    "vitest": "^4.1.9"
   }
 }
