@@ -113,10 +113,11 @@ function transformArchive(rows: Record<string, string>[]): ArchiveEra[] {
     });
   }
   const eraOrder: Record<string, number> = {
-    '2025 H2': 0,
-    '2025 H1': 1,
-    '2023 OSSCA': 2,
-    '2022 Genesis': 3,
+    '2026 H1': 0,
+    '2025 H2': 1,
+    '2025 H1': 2,
+    '2023 OSSCA': 3,
+    '2022 Genesis': 4,
   };
   const eras = [...eraMap.entries()].map(([name, entries]) => ({
     name,
