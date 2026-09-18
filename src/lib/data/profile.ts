@@ -40,7 +40,7 @@ export const profileSections: ProfileSectionData[] = [
           { platform: 'x', href: 'https://x.com/seungjun_x', label: 'X (Twitter)' },
           {
             platform: 'linkedin',
-            href: 'https://www.linkedin.com/in/basten1209/',
+            href: 'https://www.linkedin.com/in/seungjun5/',
             label: 'LinkedIn',
           },
         ],
