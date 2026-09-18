@@ -26,8 +26,8 @@
     "subtitle": "POSTECH-Oriented Nonprofit Blockchain Open-Source Community"
   },
   "sections": {
-    "insights": "ARTICLES",
-    "viewOnMedium": "VIEW ALL ↗",
+    "insights": "Articles",
+    "viewOnMedium": "More on Medium ↗",
     "simperbyTitle": "Simperby: The Heart of PDAO",
     "viewProject": "View Project →",
     "joinCommunity": "Feel free to visit PDAO!",
@@ -134,5 +134,17 @@
     "organizer": "Organizer / Director",
     "contributor": "Contributor",
     "copyright": "© 2026 POSTECH DAO. All rights reserved."
+  },
+  "landing": {
+    "lead": "A nonprofit blockchain and\nopen-source community at POSTECH.",
+    "join": "Join the community",
+    "about": "About PDAO",
+    "exploreTitle": "Explore",
+    "exploreAbout": "Projects and community history",
+    "exploreAssets": "Download Poppin images and logos",
+    "explorePeople": "Organizers and contributors",
+    "aboutTitle": "About PDAO",
+    "assetsTitle": "Poppin & logos",
+    "peopleTitle": "Members"
   }
 }

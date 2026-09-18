@@ -1,11 +1,10 @@
-/* History Timeline - Musinsa-style vertical bar with inline year markers */
+/* Community timeline */
 
 .history-timeline {
   position: relative;
   display: flex;
   flex-direction: column;
 }
-
 
 /* Continuous thin vertical line (right edge of marker column) */
 .history-timeline::before {
@@ -62,7 +61,9 @@
   font-size: var(--font-size-xs);
   color: var(--text-muted);
   font-weight: var(--font-weight-medium);
-  transition: color var(--transition-slow), font-weight var(--transition-slow);
+  transition:
+    color var(--transition-slow),
+    font-weight var(--transition-slow);
 }
 
 /* Column 2: Large year display */
@@ -125,7 +126,7 @@
 }
 
 .history-section.active .history-section__marker::after {
-  background: var(--text-primary);
+  background: var(--brand-main);
 }
 
 .history-section.active .history-section__year {

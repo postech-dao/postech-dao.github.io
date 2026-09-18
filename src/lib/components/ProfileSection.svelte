@@ -4,7 +4,7 @@
   export let section: ProfileSectionData;
 </script>
 
-<section class="section profile-section" id={section.id}>
+<section class:profile-section--single={section.members.length === 1} class="section profile-section" id={section.id}>
   <div class="container">
     <div class="section__header">
       <h2 class="section__title section__title--articles">{section.title}</h2>
