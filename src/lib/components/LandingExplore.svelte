@@ -11,7 +11,7 @@
 <section class="section landing-explore" aria-labelledby="explore-title">
   <div class="container">
     <div class="section__header">
-      <h2 class="section__title" id="explore-title" data-i18n="landing.exploreTitle">둘러보기</h2>
+      <h2 class="section__title" id="explore-title" data-i18n="landing.exploreTitle">EXPLORE</h2>
     </div>
 
     <div class="destination-grid">

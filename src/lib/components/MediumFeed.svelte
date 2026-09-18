@@ -18,7 +18,7 @@
 <section class="section journal-section" id="medium-section">
   <div class="container">
     <div class="section__header">
-      <h2 class="section__title" data-i18n="sections.insights">글</h2>
+      <h2 class="section__title" data-i18n="sections.insights">ARTICLES</h2>
       <a href="https://medium.com/postech-dao" target="_blank" rel="noopener noreferrer" class="section__link section__link--view-all" data-i18n="sections.viewOnMedium">Medium에서 더 보기 ↗</a>
     </div>
 
