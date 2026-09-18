@@ -22,20 +22,20 @@
     "ci": "biome ci biome.json package.json scripts src .github"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.0",
-    "@fontsource/roboto": "^5.2.10",
+    "@biomejs/biome": "^2.5.14",
+    "@fontsource/roboto": "^5.3.0",
     "@sveltejs/adapter-static": "^3.0.10",
-    "@sveltejs/kit": "^2.66.0",
-    "@sveltejs/vite-plugin-svelte": "^7.1.2",
-    "@types/node": "^26.0.0",
-    "@types/three": "^0.184.1",
-    "i18next": "^26.3.1",
-    "i18next-http-backend": "^4.0.0",
-    "svelte": "^5.56.3",
-    "svelte-check": "^4.6.0",
-    "three": "^0.184.0",
+    "@sveltejs/kit": "^2.70.3",
+    "@sveltejs/vite-plugin-svelte": "^7.3.0",
+    "@types/node": "^26.6.1",
+    "@types/three": "^0.186.0",
+    "i18next": "^26.4.2",
+    "i18next-http-backend": "^4.0.2",
+    "svelte": "^5.57.0",
+    "svelte-check": "^4.7.6",
+    "three": "^0.186.0",
     "typescript": "^6.0.3",
-    "vite": "^8.0.16",
-    "vitest": "^4.1.9"
+    "vite": "^8.3.0",
+    "vitest": "^5.0.1"
   }
 }
