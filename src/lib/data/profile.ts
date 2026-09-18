@@ -45,9 +45,9 @@ export const profileSections: ProfileSectionData[] = [
           },
         ],
         bio: [
-          '[2025-Present] Tech BD, B-Harvest',
+          '[2025-2026] Tech BD, Altus (B-Harvest)',
           '[2025-Present] Organizer, PDAO',
-          '[2025-Present] Based Advocate, Base Korea',
+          '[2025-2026] Based Advocate, Base Korea',
           '[2022-2023] Researcher, Bithumb',
           '[2021-Present] BS Program in IME, POSTECH',
         ],
@@ -102,7 +102,7 @@ export const profileSections: ProfileSectionData[] = [
     members: [
       {
         name: 'Taehoon Kim',
-        tag: 'Governance Committee',
+        tag: 'Genesis Member',
         image: 'images/profile/Taehoon_Kim.jpeg',
         socials: [
           { platform: 'x', href: 'https://x.com/fakedev9999', label: 'X (Twitter)' },
@@ -117,7 +117,7 @@ export const profileSections: ProfileSectionData[] = [
         bio: [
           '[2025-Present] Software Engineer, Succinct',
           '[2023-2025] ZK Engineer, Kroma',
-          '[2022-Present] Governance Committee, PDAO',
+          '[2022-Present] Genesis Member, PDAO',
           '[2022-2024] M.S. in ECE, Seoul National University',
           '[2018-2022] B.S. in CSE, POSTECH',
         ],
@@ -135,10 +135,10 @@ export const profileSections: ProfileSectionData[] = [
           { platform: 'github', href: 'https://github.com/youngjungju', label: 'GitHub' },
         ],
         bio: [
+          '[2026-Present] DevRel, Kakao Corp',
           '[2025-Present] Governance Committee, PDAO',
           '[2025] Software Engineer, Appbuildchat',
-          '[2023] Software Engineer, Aribio',
-          '[2021-2022] Software Engineer',
+          '[2023] Software Engineer, Aribio; [2021-2022] Software Engineer',
           '[2020-2026] B.S. in CSE, Handong Global Univ',
         ],
       },
